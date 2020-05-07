@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\chris\source\repos\ways\ways\obj\Debug\netcoreapp3.1\
+C:\Users\vgard\source\repos\Ways\ways\obj\Debug\netcoreapp3.1\
 ways
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
-C:\Users\chris\source\repos\ways\ways\App.xaml
-3163022440
+C:\Users\vgard\source\repos\Ways\ways\App.xaml
+4-1803928002
 
-6-240015686
-1921654412462
-MainWindow.xaml;NameChoiceWindow.xaml;OrientationQuestionWindow.xaml;
+7-1588067160
+1942040448987
+LoginAdministration.xaml;MainWindow.xaml;NameChoiceWindow.xaml;OrientationQuestionWindow.xaml;
 
 False
 
