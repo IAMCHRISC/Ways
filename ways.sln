@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ways", "ways\ways.csproj", "{943EAD46-9D63-46FF-89FD-2AE679BD0305}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ways", "ways\ways.csproj", "{943EAD46-9D63-46FF-89FD-2AE679BD0305}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADO", "ADO\ADO.csproj", "{16F741F8-4744-479A-8214-95352C45B77C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{943EAD46-9D63-46FF-89FD-2AE679BD0305}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{943EAD46-9D63-46FF-89FD-2AE679BD0305}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{943EAD46-9D63-46FF-89FD-2AE679BD0305}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16F741F8-4744-479A-8214-95352C45B77C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16F741F8-4744-479A-8214-95352C45B77C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16F741F8-4744-479A-8214-95352C45B77C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16F741F8-4744-479A-8214-95352C45B77C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -16,19 +14,13 @@ using System.Windows.Shapes;
 namespace ways
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Logique d'interaction pour OrientationQuestionWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class OrientationQuestionWindow : Page
     {
-        public MainWindow()
+        public OrientationQuestionWindow()
         {
             InitializeComponent();
-        }
-
-        public void NavigateToOrientation(object sender, RoutedEventArgs e)
-        {
-            NameChoiceWindow nameChoiceWindow = new NameChoiceWindow();
-            nameChoiceWindow.Show();
         }
     }
 }

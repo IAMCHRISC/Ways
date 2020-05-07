@@ -5,8 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ways"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Ways - Accueil" Height="450" Width="800">
     <Grid>
-
+        <Button Content="Orientation" HorizontalAlignment="Left" Margin="203,175,0,0" VerticalAlignment="Top" Height="25" Width="119" Click="NavigateToOrientation"/>
+        <Button Content="Jeu" HorizontalAlignment="Center" Margin="0,175,0,0" VerticalAlignment="Top" Height="25" Width="120"/>
+        <Button Content="Admin" HorizontalAlignment="Left" Margin="465,175,0,0" VerticalAlignment="Top" Height="25" Width="118"/>
     </Grid>
 </Window>
