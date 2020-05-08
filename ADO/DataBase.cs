@@ -9,6 +9,6 @@ namespace ADO
 {
     public class DataBase
     {
-        public static SqlConnection connection = new SqlConnection(@"Data Source=(LocalDb)\testWays;Initial Catalog=master;Integrated Security=True");
+        public static SqlConnection connection = new SqlConnection(@"Data Source=(LocalDb)\Ways;Initial Catalog=master;Integrated Security=True");
     }
 }

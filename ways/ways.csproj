@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ADO\ADO.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Page Update="NameChoiceWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
