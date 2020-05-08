@@ -5,10 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ways"
         mc:Ignorable="d"
-        Title="Ways - Accueil" Height="450" Width="800">
+        Title="{Binding Path=Content.Title, ElementName=Main}" Height="450" Width="800">
     <Grid>
-        <Button Content="Orientation" HorizontalAlignment="Left" Margin="203,175,0,0" VerticalAlignment="Top" Height="25" Width="119" Click="NavigateToOrientation"/>
-        <Button Content="Jeu" HorizontalAlignment="Center" Margin="0,175,0,0" VerticalAlignment="Top" Height="25" Width="120"/>
-        <Button Content="Admin" HorizontalAlignment="Left" Margin="465,175,0,0" VerticalAlignment="Top" Height="25" Width="118"/>
+        <StackPanel Orientation="Horizontal" Height="35" VerticalAlignment="Top">
+            <Button Content="Orientation" MinWidth="100" Click="NavigateToOrientation"/>
+            <Button Content="Jeu" MinWidth="100" Margin="10,0,0,0" Click="NavigateToGame"/>
+            <Button Content="Admin" MinWidth="100" Margin="10,0,0,0" Click="NavigateToAdmin"/>
+            <Button Content="Accueil" MinWidth="100" Margin="10,0,0,0" Click="NavigateToHome"/>
+        </StackPanel>
+        <Frame x:Name="Main" Margin="0,35,0,0" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

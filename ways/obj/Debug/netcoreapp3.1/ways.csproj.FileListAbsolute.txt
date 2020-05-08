@@ -32,3 +32,5 @@ C:\Users\chris\source\repos\ways\ways\bin\Debug\netcoreapp3.1\ADO.pdb
 C:\Users\chris\source\repos\ways\ways\obj\Debug\netcoreapp3.1\LoginAdministration.baml
 C:\Users\chris\source\repos\ways\ways\obj\Debug\netcoreapp3.1\OrientationQuestionWindow.baml
 C:\Users\chris\source\repos\ways\ways\obj\Debug\netcoreapp3.1\ways.csproj.CopyComplete
+C:\Users\chris\source\repos\ways\ways\obj\Debug\netcoreapp3.1\OrientationResultsPage.g.cs
+C:\Users\chris\source\repos\ways\ways\obj\Debug\netcoreapp3.1\OrientationResultsPage.baml
