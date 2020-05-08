@@ -30,11 +30,13 @@ namespace ways
 
             if(testLogin == true)
             {
-                lbl_statut_connexion.Content = "Good";
+                lbl_statut_connexion.Content = "";
+                lbl_statut_connexion.Visibility = Visibility.Hidden;
             }
             else
             {
-                lbl_statut_connexion.Content = "Erreur";
+                lbl_statut_connexion.Content = "Username et/ou Password inccorect";
+                lbl_statut_connexion.Visibility = Visibility.Visible;
             }
         }
     }
