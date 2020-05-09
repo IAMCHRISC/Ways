@@ -40,7 +40,9 @@ namespace ways
 
         private void NavigateToGame(object sender, RoutedEventArgs e)
         {
-            // Navigate to game logic.
+            // Temporaire : doit router vers l'écran de choix de nom de joueur
+            // et ensuite vers l'écran de jeu
+            Main.Content = new Game();
         }
 
         private void NavigateToHome(object sender, RoutedEventArgs e)
