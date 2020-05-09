@@ -6,7 +6,7 @@
       "version": "3.1.0"
     },
     "additionalProbingPaths": [
-      "C:\\Users\\vgard\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\chris\\.dotnet\\store\\|arch|\\|tfm|",
       "C:\\Users\\vgard\\.nuget\\packages",
       "C:\\Microsoft\\Xamarin\\NuGet",
       "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
