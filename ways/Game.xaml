@@ -9,16 +9,20 @@
     <Grid>
         <Image HorizontalAlignment="Left" Height="109" Margin="10,10,0,0" VerticalAlignment="Top" Width="250" Source="https://toulouse.cesi.fr/wp-content/uploads/sites/27/2018/11/Cesi_Logo_ALTERNANCE_RVB-360x187.png"/>
         <Label Content="Test de connaissance en informatique" HorizontalAlignment="Left" Margin="286,43,0,0" VerticalAlignment="Top" FontSize="25"/>
-        <Label x:Name="lbl_question" Content="Label" HorizontalAlignment="Center" Margin="0,135,0,0" VerticalAlignment="Top" Width="780" FontSize="22" HorizontalContentAlignment="Center" Height="74"/>
-        <Button x:Name="btn_duo" Content="Duo" HorizontalAlignment="Left" Margin="50,240,0,0" VerticalAlignment="Top" Height="46" Width="193" Background="White" FontSize="20"/>
-        <Button x:Name="btn_carre" Content="Carré" HorizontalAlignment="Center" Margin="0,240,0,0" VerticalAlignment="Top" Height="45" Width="192" Background="White" FontSize="20"/>
-        <Button x:Name="btn_cash" Content="Cash" HorizontalAlignment="Left" Margin="551,240,0,0" VerticalAlignment="Top" Height="45" Width="193" Background="White" FontSize="20"/>
-        <TextBox x:Name="txt_cash" HorizontalAlignment="Left" Margin="124,305,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="500" FontSize="18"/>
-        <Button x:Name="btn_valid_cash" Content="Valider" HorizontalAlignment="Left" Margin="624,305,0,0" VerticalAlignment="Top" Height="26" Width="46"/>
-        <Button x:Name="btn_reponse1" Content="" HorizontalAlignment="Left" Margin="146,349,0,0" VerticalAlignment="Top" Height="46" Width="192" Background="White" FontSize="20"/>
-        <Button x:Name="btn_reponse2" Content="" HorizontalAlignment="Left" Margin="454,349,0,0" VerticalAlignment="Top" Height="46" Width="194" Background="White" FontSize="20"/>
-        <Button x:Name="btn_reponse3" Content="" HorizontalAlignment="Left" Margin="146,451,0,0" VerticalAlignment="Top" Height="46" Width="192" Background="White" FontSize="20"/>
-        <Button x:Name="btn_reponse4" Content="" HorizontalAlignment="Left" Margin="454,451,0,0" VerticalAlignment="Top" Height="46" Width="193" Background="White" FontSize="20"/>
-
+        <Label x:Name="lbl_question" Content="" HorizontalAlignment="Center" Margin="0,135,0,0" VerticalAlignment="Top" Width="780" FontSize="22" HorizontalContentAlignment="Center" Height="74"/>
+        <Button x:Name="btn_duo" Content="Duo" HorizontalAlignment="Left" Margin="50,240,0,0" VerticalAlignment="Top" Height="46" Width="193" Background="White" FontSize="20" Click="btn_type_reponse_Click"/>
+        <Button x:Name="btn_carre" Content="Carré" HorizontalAlignment="Center" Margin="0,240,0,0" VerticalAlignment="Top" Height="45" Width="192" Background="White" FontSize="20" Click="btn_type_reponse_Click"/>
+        <Button x:Name="btn_cash" Content="Cash" HorizontalAlignment="Left" Margin="551,240,0,0" VerticalAlignment="Top" Height="45" Width="193" Background="White" FontSize="20" Click="btn_type_reponse_Click"/>
+        <TextBox x:Name="txt_cash" Visibility="Hidden" HorizontalAlignment="Left" Margin="124,305,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="500" FontSize="18"/>
+        <Button x:Name="btn_valid_cash" Visibility="Hidden" Content="Valider" HorizontalAlignment="Left" Margin="624,305,0,0" VerticalAlignment="Top" Height="26" Width="46"/>
+        <Button x:Name="btn_reponse1" Visibility="Hidden" Content="" HorizontalAlignment="Left" Margin="146,349,0,0" VerticalAlignment="Top" Height="46" Width="192" Background="White" FontSize="20"/>
+        <Button x:Name="btn_reponse2" Visibility="Hidden" Content="" HorizontalAlignment="Left" Margin="454,349,0,0" VerticalAlignment="Top" Height="46" Width="194" Background="White" FontSize="20"/>
+        <Button x:Name="btn_reponse3" Visibility="Hidden" Content="" HorizontalAlignment="Left" Margin="146,451,0,0" VerticalAlignment="Top" Height="46" Width="192" Background="White" FontSize="20"/>
+        <Button x:Name="btn_reponse4" Visibility="Hidden" Content="" HorizontalAlignment="Left" Margin="454,451,0,0" VerticalAlignment="Top" Height="46" Width="193" Background="White" FontSize="20"/>
+        <Label Visibility="Hidden" Content="0" x:Name="hidden_id_question"></Label>
+        <Label Visibility="Hidden" Content="False" x:Name="hidden_reponse1"></Label>
+        <Label Visibility="Hidden" Content="False" x:Name="hidden_reponse2"></Label>
+        <Label Visibility="Hidden" Content="False" x:Name="hidden_reponse3"></Label>
+        <Label Visibility="Hidden" Content="False" x:Name="hidden_reponse4"></Label>
     </Grid>
 </Window>
