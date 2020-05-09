@@ -27,8 +27,25 @@ namespace ways
 
         public void NavigateToOrientation(object sender, RoutedEventArgs e)
         {
-            NameChoiceWindow nameChoiceWindow = new NameChoiceWindow();
-            nameChoiceWindow.Show();
+            //NameChoiceWindow nameChoiceWindow = new NameChoiceWindow();
+            //nameChoiceWindow.Show();
+            Main.Content = new NameChoiceWindow();
+        }
+
+        public void NavigateToAdmin(object sender, RoutedEventArgs e)
+        {
+            LoginAdministration loginAdministration = new LoginAdministration();
+            loginAdministration.Show();
+        }
+
+        private void NavigateToGame(object sender, RoutedEventArgs e)
+        {
+            // Navigate to game logic.
+        }
+
+        private void NavigateToHome(object sender, RoutedEventArgs e)
+        {
+            // Navigate to home page.
         }
     }
 }

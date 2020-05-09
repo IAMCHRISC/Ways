@@ -5,46 +5,46 @@ using System.Text;
 
 namespace ADO
 {
-    public class Questions
+    public class Answers
     {
         private int id;
         private string title;
-        private int order;
-        private int type;
+        private bool solution;
+        private int questionId;
 
         private static SqlCommand command;
         private static SqlDataReader reader;
 
         public int Id { get => id; set => id = value; }
         public string Title { get => title; set => title = value; }
-        public int Order { get => order; set => order = value; }
-        public int Type { get => type; set => type = value; }
+        public bool Solution { get => solution; set => solution = value; }
+        public int QuestionId { get => questionId; set => questionId = value; }
 
-        public static List<Questions> GetQuestionsByType(int type)
+        public static List<Answers> GetAnswersByQuestionId(int questionId)
         {
-            List<Questions> questionsList = new List<Questions>();
-            string request = "SELECT id_question, entitled, [order], id_question_type FROM T_Questions " +
-                "WHERE id_question_type = @question_type " +
+            List<Answers> answersList = new List<Answers>();
+            string request = "SELECT id_answer, entitled, solution, id_question FROM T_Answers " +
+                "WHERE id_question = @questionId " +
                 "AND active = 'True'";
             command = new SqlCommand(request, DataBase.connection);
-            command.Parameters.Add(new SqlParameter("@question_type", type));
+            command.Parameters.Add(new SqlParameter("@questionId", questionId));
             DataBase.connection.Open();
             reader = command.ExecuteReader();
             while (reader.Read())
             {
-                Questions question = new Questions
+                Answers answer = new Answers
                 {
                     Id = reader.GetInt32(0),
                     Title = reader.GetString(1),
-                    Order = reader.GetInt32(2),
-                    Type = reader.GetInt32(3)
+                    Solution = reader.GetBoolean(2),
+                    QuestionId = reader.GetInt32(3)
                 };
-                questionsList.Add(question);
+                answersList.Add(answer);
             }
             reader.Close();
             command.Dispose();
             DataBase.connection.Close();
-            return questionsList;
+            return answersList;
         }
     }
 }

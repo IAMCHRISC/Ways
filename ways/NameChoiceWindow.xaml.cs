@@ -18,11 +18,35 @@ namespace ways
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class NameChoiceWindow : Window
+    public partial class NameChoiceWindow : Page
     {
         public NameChoiceWindow()
         {
             InitializeComponent();
+        }
+
+        // Check if the given name is not empty
+        private bool CheckNameValidity()
+        {
+            bool isValid = false;
+            if(textBox_Name.Text.Length > 0)
+            {
+                isValid = true;
+            }
+            return isValid;
+        }
+
+        public void NavigateToQuestions(object sender, RoutedEventArgs e)
+        {
+            if (CheckNameValidity()) {
+                //OrientationQuestionWindow questionWindow = new OrientationQuestionWindow();
+                //questionWindow.Show();
+                NavigationService.Navigate(new OrientationQuestionWindow());
+            }
+            else
+            {
+                validityLabel.Content = "Veuillez saisir un nom de joueur.";
+            }
         }
     }
 }
