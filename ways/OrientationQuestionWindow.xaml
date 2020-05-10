@@ -12,12 +12,14 @@
         <Label Content="Questions orientation" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,0,0,0" FontSize="34"/>
         <Label x:Name="numberOfQuestionsLabel" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,60,0,0"/>
         <Label x:Name="countLabel" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,90,0,0"/>
+        <Label x:Name="resultsListLabel" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,120,0,0"/>
         <Label x:Name="questionTitleLabel" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25"/>
 
         <StackPanel x:Name="answersStackPanel" Orientation="Vertical" HorizontalAlignment="Center" Margin="0,200,0,0">
             
         </StackPanel>
-        
+
+        <Label Content="Merci de répondre à la question." x:Name="invalidAnswerLabel" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,50" Foreground="Red" Visibility="Hidden"/>
         <Button Content="Valider" HorizontalAlignment="Center" Margin="0,0,0,10" VerticalAlignment="Bottom" Height="25" Width="192" Click="ValidateAnswer"/>
     </Grid>
 </Page>

@@ -34,3 +34,5 @@ C:\Users\chris\source\repos\ways\ways\obj\Debug\netcoreapp3.1\OrientationQuestio
 C:\Users\chris\source\repos\ways\ways\obj\Debug\netcoreapp3.1\ways.csproj.CopyComplete
 C:\Users\chris\source\repos\ways\ways\obj\Debug\netcoreapp3.1\OrientationResultsPage.g.cs
 C:\Users\chris\source\repos\ways\ways\obj\Debug\netcoreapp3.1\OrientationResultsPage.baml
+C:\Users\chris\source\repos\ways\ways\obj\Debug\netcoreapp3.1\Game.g.cs
+C:\Users\chris\source\repos\ways\ways\obj\Debug\netcoreapp3.1\Game.baml
