@@ -10,5 +10,20 @@
 
     <Grid>
         <Label Content="Résultats" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Label Content ="Vous êtes fait pour être..." HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,50,0,0"/>
+
+        <StackPanel Orientation="Vertical" Width="300" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0">
+            <Label Content="title" x:Name="mainJobTitleLabel" FontSize="25" Margin="0,0,0,0" HorizontalAlignment="Center" Width="Auto"/>
+            <TextBlock Text="description" x:Name="mainJobDescLabel" FontSize="12" TextWrapping="Wrap" HorizontalAlignment="Center"/>
+            <Label Content="Ces métiers pourraient aussi vous correspondre :" FontSize="20"/>
+            <Label x:Name="secondJobTitleLabel"/>
+            <Label x:Name="thirdJobTitleLabel"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Height="35" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+            <Button Content="Envoyer par email" MinWidth="100" Margin="0,0,5,0" Click="SendByEmail"/>
+            <Button Content="Retour à l'accueil" MinWidth="100" Margin="5,0,0,0" Click="NavigateToHome"/>
+        </StackPanel>
+
     </Grid>
 </Page>
