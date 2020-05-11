@@ -42,12 +42,18 @@ namespace ways
         {
             // Open a new window to send results by email
             MessageBox.Show("Envoyer par email"); // Debug
+            NavigationService.Navigate(new OrientationEmailPage(JobsList));
         }
 
         private void NavigateToHome(object sender, RoutedEventArgs e)
         {
             // Open a new window to send results by email
             MessageBox.Show("Retour à l'accueil"); // Debug
+            //while (this.NavigationService.CanGoBack)
+            //{
+            //    this.NavigationService.GoBack();
+            //}
+            (this.Parent as Frame).Visibility = Visibility.Hidden;
         }
     }
 }

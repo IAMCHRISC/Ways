@@ -13,6 +13,9 @@
     <Compile Update="LoginAdministration.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="OrientationEmailPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="OrientationQuestionWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -31,6 +34,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="OrientationEmailPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="OrientationQuestionWindow.xaml">

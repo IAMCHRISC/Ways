@@ -36,3 +36,5 @@ C:\Users\chris\source\repos\ways\ways\obj\Debug\netcoreapp3.1\OrientationResults
 C:\Users\chris\source\repos\ways\ways\obj\Debug\netcoreapp3.1\OrientationResultsPage.baml
 C:\Users\chris\source\repos\ways\ways\obj\Debug\netcoreapp3.1\Game.g.cs
 C:\Users\chris\source\repos\ways\ways\obj\Debug\netcoreapp3.1\Game.baml
+C:\Users\chris\source\repos\ways\ways\obj\Debug\netcoreapp3.1\OrientationEmailPage.g.cs
+C:\Users\chris\source\repos\ways\ways\obj\Debug\netcoreapp3.1\OrientationEmailPage.baml
