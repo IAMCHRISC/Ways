@@ -61,7 +61,7 @@ namespace ways
                 // Envoyer l'email
                 MessageBox.Show("email envoyé.");
                 // Navigate back to home
-                (this.Parent as Frame).Visibility = Visibility.Hidden;
+                
             }
         }
     }

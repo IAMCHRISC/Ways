@@ -33,8 +33,10 @@ namespace ways
 
         public void NavigateToAdmin(object sender, RoutedEventArgs e)
         {
-            LoginAdministration loginAdministration = new LoginAdministration();
-            loginAdministration.Show();
+            //LoginAdministration loginAdministration = new LoginAdministration();
+            //loginAdministration.Show();
+            Main.Visibility = Visibility.Visible;
+            Main.Content = new LoginAdministration();
         }
 
         private void NavigateToGame(object sender, RoutedEventArgs e)

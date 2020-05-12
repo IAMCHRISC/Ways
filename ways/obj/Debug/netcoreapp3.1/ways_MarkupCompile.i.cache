@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
 C:\Users\chris\source\repos\ways\ways\App.xaml
-71366491850
+8289666869
 
-1058772802
+11-758312313
 194-263926041
-Game.xaml;LoginAdministration.xaml;MainWindow.xaml;NameChoiceWindow.xaml;OrientationEmailPage.xaml;OrientationQuestionWindow.xaml;OrientationResultsPage.xaml;
+AdminHomPage.xaml;Game.xaml;LoginAdministration.xaml;MainWindow.xaml;NameChoiceWindow.xaml;OrientationEmailPage.xaml;OrientationQuestionWindow.xaml;OrientationResultsPage.xaml;
 
-False
+True
 
