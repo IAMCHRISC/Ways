@@ -53,3 +53,7 @@ C:\Users\vgard\source\repos\Ways\ways\bin\Debug\netcoreapp3.1\ADO.pdb
 C:\Users\vgard\source\repos\Ways\ways\obj\Debug\netcoreapp3.1\ways.csproj.CopyComplete
 C:\Users\vgard\source\repos\Ways\ways\obj\Debug\netcoreapp3.1\Game.g.cs
 C:\Users\vgard\source\repos\Ways\ways\obj\Debug\netcoreapp3.1\Game.baml
+C:\Users\vgard\source\repos\Ways\ways\obj\Debug\netcoreapp3.1\EndGameWindow.g.cs
+C:\Users\vgard\source\repos\Ways\ways\obj\Debug\netcoreapp3.1\EndGameWindow.baml
+C:\Users\vgard\source\repos\Ways\ways\obj\Debug\netcoreapp3.1\RankingWindow.g.cs
+C:\Users\vgard\source\repos\Ways\ways\obj\Debug\netcoreapp3.1\RankingWindow.baml

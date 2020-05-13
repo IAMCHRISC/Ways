@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
 C:\Users\vgard\source\repos\Ways\ways\App.xaml
-5852462572
+71155464232
 
-81781574034
+10-2058407211
 1942040448987
-Game.xaml;LoginAdministration.xaml;MainWindow.xaml;NameChoiceWindow.xaml;OrientationQuestionWindow.xaml;
+EndGameWindow.xaml;Game.xaml;LoginAdministration.xaml;MainWindow.xaml;NameChoiceWindow.xaml;OrientationQuestionWindow.xaml;RankingWindow.xaml;
 
 True
 

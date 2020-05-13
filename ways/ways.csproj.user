@@ -7,14 +7,23 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="EndGameWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Game.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="LoginAdministration.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="RankingWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="EndGameWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Game.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -25,6 +34,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="RankingWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

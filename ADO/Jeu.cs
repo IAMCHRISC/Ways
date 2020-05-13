@@ -8,6 +8,7 @@ namespace ADO
     public class Jeu
     {
         private static SqlCommand command;
+        public static int score;
         public static bool verif_cash(int id_question, string reponse)
         {
             int count;
@@ -37,7 +38,21 @@ namespace ADO
             command.Parameters.Add(new SqlParameter("@id_question", id_question));
             DataBase.connection.Open();
             result = (string)command.ExecuteScalar();
+            DataBase.connection.Close();
+            return result;
+        }
 
+        public static bool save_score()
+        {
+            bool result = false;
+            string request = "INSERT INTO T_Score VALUES (@username, @score, getdate()); SELECT @@identity";
+            command = new SqlCommand(request, DataBase.connection);
+            DataBase.connection.Open();
+            if((int)command.ExecuteScalar() > 0)
+            {
+                result = true;
+            }
+            DataBase.connection.Close();
             return result;
         }
     }

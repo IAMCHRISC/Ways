@@ -89,11 +89,10 @@ namespace ways
 
             if(lbl_question.Content == "")
             {
-                lbl_question.Content = "Terminé";
-                hidden_id_question.Content = 0;
-                btn_duo.Visibility = Visibility.Hidden;
-                btn_carre.Visibility = Visibility.Hidden;
-                btn_cash.Visibility = Visibility.Hidden;
+                Jeu.score = (int)lbl_score.Content;
+                EndGameWindow fenetre = new EndGameWindow();
+                fenetre.Show();
+                this.Close();
             }
             DataBase.connection.Close();
         }
@@ -246,9 +245,6 @@ namespace ways
             
             if (nb_choice == 2)
             {
-
-                
-
                 Random aleatoire = new Random();
                 int id_lbl_reponse = aleatoire.Next(1, 2);
                 bool good_answer_display = false;
