@@ -32,7 +32,7 @@ namespace ways
                 Jobs.GetJobById(results[1]),
                 Jobs.GetJobById(results[2]),
             };
-            mainJobTitleLabel.Content = JobsList[0].Title;
+            mainJobTitleLabel.Text = JobsList[0].Title;
             mainJobDescLabel.Text = JobsList[0].Description;
             secondJobTitleLabel.Content = "- " + JobsList[1].Title;
             thirdJobTitleLabel.Content = "- " + JobsList[2].Title;

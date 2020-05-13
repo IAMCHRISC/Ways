@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ways"
         mc:Ignorable="d"
-        Title="{Binding Path=Content.Title, ElementName=Main}" Height="450" Width="800">
+        Title="{Binding Path=Content.Title, ElementName=Main}" Height="450" Width="800"
+        WindowStyle="None" WindowStartupLocation="CenterScreen"
+        WindowState="Maximized">
     <Grid>
         <StackPanel Orientation="Horizontal" Height="35" VerticalAlignment="Top">
             <Button Content="Orientation" MinWidth="100" Click="NavigateToOrientation"/>

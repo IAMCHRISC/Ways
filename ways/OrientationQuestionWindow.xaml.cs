@@ -59,7 +59,7 @@ namespace ways
             resultsListLabel.Content = "ResultsList = [" + string.Join(", ", ResultsList) + "]"; // Debug
             invalidAnswerLabel.Visibility = Visibility.Hidden;
             countLabel.Content = (CurrentQuestionIndex + 1) + "/" + QuestionsList.Count; // Utile pour l'UX
-            questionTitleLabel.Content = QuestionsList[CurrentQuestionIndex].Title;
+            questionTitleLabel.Text = QuestionsList[CurrentQuestionIndex].Title;
             AnswersList = Answers.GetAnswersByQuestionId(QuestionsList[CurrentQuestionIndex].Id);
             answersStackPanel.Children.Clear();
             foreach (Answers answer in AnswersList)

@@ -6,14 +6,18 @@
       xmlns:local="clr-namespace:ways"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="OrientationResultsPage" Background="White">
+      Title="OrientationResultsPage">
+    <Page.Background>
+        <ImageBrush ImageSource="Resources/results.jpg"></ImageBrush>
+    </Page.Background>
 
     <Grid>
         <Label Content="Résultats" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Top"/>
         <Label Content ="Vous êtes fait pour être..." HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,50,0,0"/>
 
-        <StackPanel Orientation="Vertical" Width="300" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0">
-            <Label Content="title" x:Name="mainJobTitleLabel" FontSize="25" Margin="0,0,0,0" HorizontalAlignment="Center" Width="Auto"/>
+        <Rectangle HorizontalAlignment="Center" VerticalAlignment="Center" Fill="White" Opacity="0.6" Height="400" Width="800"/>
+        <StackPanel Orientation="Vertical" Height="400" Width="800" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0">
+            <TextBlock Text="title" x:Name="mainJobTitleLabel" FontSize="25" Margin="0,0,0,0" TextAlignment="Center" TextWrapping="Wrap"/>
             <TextBlock Text="description" x:Name="mainJobDescLabel" FontSize="12" TextWrapping="Wrap" HorizontalAlignment="Center"/>
             <Label Content="Ces métiers pourraient aussi vous correspondre :" FontSize="20"/>
             <Label x:Name="secondJobTitleLabel"/>
