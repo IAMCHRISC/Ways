@@ -47,13 +47,8 @@ namespace ways
 
         private void NavigateToHome(object sender, RoutedEventArgs e)
         {
-            // Open a new window to send results by email
+            // Get back to home page
             MessageBox.Show("Retour à l'accueil"); // Debug
-            //while (this.NavigationService.CanGoBack)
-            //{
-            //    this.NavigationService.GoBack();
-            //}
-            (this.Parent as Frame).Visibility = Visibility.Hidden;
         }
     }
 }

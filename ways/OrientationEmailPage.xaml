@@ -6,18 +6,21 @@
       xmlns:local="clr-namespace:ways"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="OrientationEmailPage" Background="White">
+      Title="Test d'orientation - Envoyer les résultats">
+    <Page.Background>
+        <ImageBrush ImageSource="Resources/results.jpg"></ImageBrush>
+    </Page.Background>
 
     <Grid>
-        <Label Content="Envoyer les résultats" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Label Content="Veuillez renseigner votre adresse email : *" HorizontalAlignment="Center"/>
-            <TextBox x:Name="emailField" Margin="0,10,0,0"/>
-            <Button Content="Envoyer" Margin="0,10,0,0" Click="SendResults"/>
-            <Label x:Name="errorMessageLabel" Content="Merci de renseigner une adresse email valide." FontSize="9" Foreground="Red" HorizontalAlignment="Center" Visibility="Hidden"/>
+        <Rectangle HorizontalAlignment="Center" VerticalAlignment="Center" Fill="White" Opacity="0.6" Height="400" Width="800"/>
+        
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Height="400" Width="800">
+            <Label Content="Veuillez renseigner votre adresse email : *" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20,30,20,20" FontSize="25"/>
+            <TextBox x:Name="emailField" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="192" Margin="0,10,0,10"/>
+            <Button Content="Envoyer" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="192" Click="SendResults" Margin="0,10,0,10"/>
+            <Label Content="Merci de renseigner une adresse email valide." HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="errorMessageLabel" Foreground="Red" Visibility="Hidden"/>
         </StackPanel>
 
-        <Label Content="* L'adresse email renseignée ne sera pas stockée en base de données." FontSize="7" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,20"/>
+        <Label Content="* L'adresse email renseignée ne sera pas stockée en base de données." FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,20"/>
     </Grid>
 </Page>

@@ -7,7 +7,22 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="AdminHomPage.xaml.cs">
+    <Compile Update="AddQuestionPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AdminHomePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="DeleteQuestionPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="EditGameLadderPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="EditQuestionPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="EmailParamPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Game.xaml.cs">
@@ -27,7 +42,22 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="AdminHomPage.xaml">
+    <Page Update="AddQuestionPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AdminHomePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="DeleteQuestionPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="EditGameLadderPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="EditQuestionPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="EmailParamPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Game.xaml">

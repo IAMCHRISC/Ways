@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:ways"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="OrientationQuestionWindow">
+      Title="Test d'orientation - Questions">
     <Page.Background>
         <ImageBrush ImageSource="Resources/office.jpg"></ImageBrush>
     </Page.Background>

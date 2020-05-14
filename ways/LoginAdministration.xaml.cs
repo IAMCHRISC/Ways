@@ -32,7 +32,7 @@ namespace ways
             {
                 lbl_statut_connexion.Content = "";
                 lbl_statut_connexion.Visibility = Visibility.Hidden;
-                AdminHomPage adminHomPage = new AdminHomPage();
+                AdminHomePage adminHomPage = new AdminHomePage();
                 adminHomPage.Show();
             }
             else

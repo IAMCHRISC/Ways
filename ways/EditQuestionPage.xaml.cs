@@ -14,11 +14,11 @@ using System.Windows.Shapes;
 namespace ways
 {
     /// <summary>
-    /// Logique d'interaction pour AdminHomPage.xaml
+    /// Logique d'interaction pour EditQuestionPage.xaml
     /// </summary>
-    public partial class AdminHomPage : Window
+    public partial class EditQuestionPage : Page
     {
-        public AdminHomPage()
+        public EditQuestionPage()
         {
             InitializeComponent();
         }

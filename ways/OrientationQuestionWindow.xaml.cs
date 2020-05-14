@@ -96,7 +96,7 @@ namespace ways
         private List<int> ComputeResults(List<int> results)
         {
             List<int> topThreeList = new List<int>();
-            MessageBox.Show(string.Join(", ", results), "ResultsList brut"); // Debug
+            //MessageBox.Show(string.Join(", ", results), "ResultsList brut"); // Debug
             //results.Sort();
             IEnumerable<int> distinctResults = results.Distinct();
             IDictionary<int, float> distinctCountedResults = new Dictionary<int, float>();
@@ -115,19 +115,19 @@ namespace ways
                 // Ajouter le jobId et son pourcentage de présence dans le distinctCountedResults
                 distinctCountedResults.Add(result, percent);
             }
-            MessageBox.Show(string.Join(", ", distinctCountedResults), "distinct counted results"); // Debug
+            //MessageBox.Show(string.Join(", ", distinctCountedResults), "distinct counted results"); // Debug
 
             // Ordonner distinctCountedResults par valeur (pourcentage) décroissante
             var sortedCountedResults = distinctCountedResults.ToList();
             sortedCountedResults.Sort((pair1, pair2) => pair2.Value.CompareTo(pair1.Value));
-            MessageBox.Show(string.Join(", ", sortedCountedResults), "sorted counted results"); // Debug
+            //MessageBox.Show(string.Join(", ", sortedCountedResults), "sorted counted results"); // Debug
 
             // Ajouter les id des 3 premiers résultats de sortedCountedResults à topThreeList
             for(int i = 0; i < 3; i++)
             {
                 topThreeList.Add(sortedCountedResults[i].Key);
             }
-            MessageBox.Show(string.Join(", ", topThreeList), "topThreeList"); // Debug
+            //MessageBox.Show(string.Join(", ", topThreeList), "topThreeList"); // Debug
 
             // Retour de topThreeList
             return topThreeList;
