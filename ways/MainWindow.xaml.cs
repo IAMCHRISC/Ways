@@ -27,9 +27,8 @@ namespace ways
 
         public void NavigateToOrientation(object sender, RoutedEventArgs e)
         {
-            //NameChoiceWindow nameChoiceWindow = new NameChoiceWindow();
-            //nameChoiceWindow.Show();
-            Main.Content = new NameChoiceWindow();
+            NameChoiceWindow nameChoiceWindow = new NameChoiceWindow();
+            nameChoiceWindow.Show();
         }
 
         public void NavigateToAdmin(object sender, RoutedEventArgs e)
@@ -42,12 +41,8 @@ namespace ways
         {
             // Temporaire : doit router vers l'écran de choix de nom de joueur
             // et ensuite vers l'écran de jeu
-            Main.Content = new Game();
-        }
-
-        private void NavigateToHome(object sender, RoutedEventArgs e)
-        {
-            // Navigate to home page.
+            Game game = new Game();
+            game.Show();
         }
     }
 }

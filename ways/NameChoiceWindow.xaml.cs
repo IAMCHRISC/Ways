@@ -18,7 +18,7 @@ namespace ways
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class NameChoiceWindow : Page
+    public partial class NameChoiceWindow : Window
     {
         public NameChoiceWindow()
         {
@@ -39,9 +39,9 @@ namespace ways
         public void NavigateToQuestions(object sender, RoutedEventArgs e)
         {
             if (CheckNameValidity()) {
-                //OrientationQuestionWindow questionWindow = new OrientationQuestionWindow();
-                //questionWindow.Show();
-                NavigationService.Navigate(new OrientationQuestionWindow());
+                OrientationQuestionWindow questionWindow = new OrientationQuestionWindow();
+                questionWindow.Show();
+                this.Close();
             }
             else
             {

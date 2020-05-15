@@ -6,13 +6,13 @@
       xmlns:local="clr-namespace:ways"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="400"
-      Title="LoginAdministration" Width="450" Height="500" >
+      Title="LoginAdministration" Width="450" Height="500" WindowStartupLocation="CenterScreen">
 
     <Grid Background="white" x:Name="GridLogin">
         <Label Content="Nom d'utilisateur :" HorizontalAlignment="Left" Margin="87,149,0,0" VerticalAlignment="Top" FontSize="14"/>
         <TextBox HorizontalAlignment="Center" Margin="0,183,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="254" FontSize="14" x:Name="txt_username"/>
         <Label Content="Mot de passe :" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="87,217,0,0" FontSize="14" Width="119"/>
-        <TextBox HorizontalAlignment="Center" Margin="0,251,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="254" FontSize="14" x:Name="txt_password"/>
+        <PasswordBox HorizontalAlignment="Center" Margin="0,251,0,0" VerticalAlignment="Top" Width="254" FontSize="14" x:Name="txt_password"/>
         <Button Width="150" Height="50" Margin="125,312,125,72" Background="White" BorderBrush="White" x:Name="btn_connection" Click="btn_connectionOnClick">
             <Image Source="https://altertube.info/imgs/icones/bouton_connexion.png" Height="50" Width="140" Visibility="Visible"></Image>
         </Button>

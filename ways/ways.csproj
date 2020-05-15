@@ -7,7 +7,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\cesi_logo.jpg" />
+    <None Remove="Resources\office.jpg" />
+    <None Remove="Resources\people.jpg" />
+    <None Remove="Resources\results.jpg" />
+    <None Remove="Resources\writing.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ADO\ADO.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\cesi_logo.jpg" />
+    <Resource Include="Resources\office.jpg" />
+    <Resource Include="Resources\people.jpg" />
+    <Resource Include="Resources\results.jpg" />
+    <Resource Include="Resources\writing.jpg" />
   </ItemGroup>
 
   <ItemGroup>

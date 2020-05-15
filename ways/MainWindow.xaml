@@ -5,14 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ways"
         mc:Ignorable="d"
-        Title="{Binding Path=Content.Title, ElementName=Main}" Height="450" Width="800">
+        Title="{Binding Path=Content.Title, ElementName=Main}" Height="450" Width="800"
+        WindowStyle="None" WindowStartupLocation="CenterScreen"
+        WindowState="Maximized">
+    <Window.Background>
+        <ImageBrush ImageSource="Resources/people.jpg"></ImageBrush>
+    </Window.Background>
+    
     <Grid>
-        <StackPanel Orientation="Horizontal" Height="35" VerticalAlignment="Top">
-            <Button Content="Orientation" MinWidth="100" Click="NavigateToOrientation"/>
-            <Button Content="Jeu" MinWidth="100" Margin="10,0,0,0" Click="NavigateToGame"/>
-            <Button Content="Admin" MinWidth="100" Margin="10,0,0,0" Click="NavigateToAdmin"/>
-            <Button Content="Accueil" MinWidth="100" Margin="10,0,0,0" Click="NavigateToHome"/>
-        </StackPanel>
-        <Frame x:Name="Main" Margin="0,35,0,0" NavigationUIVisibility="Hidden"/>
+        <DockPanel Background="Black" Height="50" VerticalAlignment="Top" HorizontalAlignment="Stretch">
+            <StackPanel Orientation="Horizontal" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" >
+                <Button Content="Orientation" MinWidth="100" Click="NavigateToOrientation"/>
+                <Button Content="Jeu" MinWidth="100" Margin="0,0,0,0" Click="NavigateToGame"/>
+                <Button Content="Admin" MinWidth="100" Margin="0,0,0,0" Click="NavigateToAdmin"/>
+            </StackPanel>
+        </DockPanel>
+        <Image HorizontalAlignment="Left" Height="50" Margin="0,0,0,0" VerticalAlignment="Top" Width="254" Source="Resources/cesi_logo.jpg"/>
+        
+        <!--<Frame x:Name="Main" Margin="0,50,0,0" NavigationUIVisibility="Hidden"/>-->
     </Grid>
 </Window>
