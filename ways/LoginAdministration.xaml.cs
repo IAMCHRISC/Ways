@@ -17,7 +17,7 @@ namespace ways
     /// <summary>
     /// Logique d'interaction pour LoginAdministration.xaml
     /// </summary>
-    public partial class LoginAdministration : Page
+    public partial class LoginAdministration : Window
     {
         public LoginAdministration()
         {
@@ -26,7 +26,7 @@ namespace ways
 
         public void btn_connectionOnClick(object sender, RoutedEventArgs e)
         {
-            bool testLogin = Administrator.LoginVerification(txt_username.Text, txt_password.Text);
+            bool testLogin = Administrator.LoginVerification(txt_username.Text, txt_password.Password.ToString());
 
             if (testLogin == true)
             {
@@ -34,6 +34,7 @@ namespace ways
                 lbl_statut_connexion.Visibility = Visibility.Hidden;
                 AdminHomePage adminHomPage = new AdminHomePage();
                 adminHomPage.Show();
+                this.Close();
             }
             else
             {

@@ -17,7 +17,7 @@ namespace ways
     /// <summary>
     /// Logique d'interaction pour OrientationEmailPage.xaml
     /// </summary>
-    public partial class OrientationEmailPage : Page
+    public partial class OrientationEmailPage : Window
     {
         private List<Jobs> results;
 
@@ -44,9 +44,7 @@ namespace ways
 
         private void SendResults(object sender, RoutedEventArgs e)
         {
-            // Send results by email :
-            // Récupérer l'adresse email renseignée
-            // Vérifier que c'est bien une adresse email
+            // Vérifier que l'adresse email renseignée est bien une adresse email
             if (!IsValidEmail(emailField.Text))
             {
                 // Afficher message d'erreur
@@ -59,9 +57,9 @@ namespace ways
                 // - utiliser le nom de joueur renseigné pour l'objet
                 // - utiliser les résultats précédents pour le corps du mai
                 // Envoyer l'email
-                MessageBox.Show("email envoyé.");
+                MessageBox.Show("L'email a bien été envoyé.");
                 // Navigate back to home
-                
+                this.Close();
             }
         }
     }

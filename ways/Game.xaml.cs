@@ -17,7 +17,7 @@ namespace ways
     /// <summary>
     /// Logique d'interaction pour Game.xaml
     /// </summary>
-    public partial class Game : Page
+    public partial class Game : Window
     {
         public SqlCommand command;
         public string question_type;
@@ -92,7 +92,7 @@ namespace ways
                 Jeu.score = (int)lbl_score.Content;
                 EndGameWindow fenetre = new EndGameWindow();
                 fenetre.Show();
-                //this.Close();
+                this.Close();
             }
             DataBase.connection.Close();
         }

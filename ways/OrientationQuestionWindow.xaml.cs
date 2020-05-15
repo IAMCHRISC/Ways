@@ -18,7 +18,7 @@ namespace ways
     /// <summary>
     /// Logique d'interaction pour OrientationQuestionWindow.xaml
     /// </summary>
-    public partial class OrientationQuestionWindow : Page
+    public partial class OrientationQuestionWindow : Window
     {
         private List<Questions> questionsList;
         private List<Answers> answersList;
@@ -157,7 +157,9 @@ namespace ways
                     // Calculer résultat final
                     List<int> results = ComputeResults(ResultsList);
                     // Navigation vers la page de résultats finaux
-                    NavigationService.Navigate(new OrientationResultsPage(results));
+                    OrientationResultsPage orientationResultsPage = new OrientationResultsPage(results);
+                    orientationResultsPage.Show();
+                    this.Close();
                 }
             }
         }

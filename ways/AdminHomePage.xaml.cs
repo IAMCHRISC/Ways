@@ -52,5 +52,10 @@ namespace ways
             adminMainFrame.Visibility = Visibility.Visible;
             adminMainFrame.Content = new EditGameLadderPage();
         }
+
+        private void Logout(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

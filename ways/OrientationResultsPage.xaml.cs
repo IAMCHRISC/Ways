@@ -17,7 +17,7 @@ namespace ways
     /// <summary>
     /// Logique d'interaction pour OrientationResultsPage.xaml
     /// </summary>
-    public partial class OrientationResultsPage : Page
+    public partial class OrientationResultsPage : Window
     {
         private List<Jobs> jobsList;
 
@@ -41,14 +41,15 @@ namespace ways
         private void SendByEmail(object sender, RoutedEventArgs e)
         {
             // Open a new window to send results by email
-            MessageBox.Show("Envoyer par email"); // Debug
-            NavigationService.Navigate(new OrientationEmailPage(JobsList));
+            OrientationEmailPage orientationEmailPage = new OrientationEmailPage(JobsList);
+            orientationEmailPage.Show();
+            this.Close();
         }
 
         private void NavigateToHome(object sender, RoutedEventArgs e)
         {
             // Get back to home page
-            MessageBox.Show("Retour à l'accueil"); // Debug
+            this.Close();
         }
     }
 }

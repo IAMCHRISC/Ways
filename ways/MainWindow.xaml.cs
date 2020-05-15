@@ -27,30 +27,22 @@ namespace ways
 
         public void NavigateToOrientation(object sender, RoutedEventArgs e)
         {
-            Main.Visibility = Visibility.Visible;
-            Main.Content = new NameChoiceWindow();
+            NameChoiceWindow nameChoiceWindow = new NameChoiceWindow();
+            nameChoiceWindow.Show();
         }
 
         public void NavigateToAdmin(object sender, RoutedEventArgs e)
         {
-            //LoginAdministration loginAdministration = new LoginAdministration();
-            //loginAdministration.Show();
-            Main.Visibility = Visibility.Visible;
-            Main.Content = new LoginAdministration();
+            LoginAdministration loginAdministration = new LoginAdministration();
+            loginAdministration.Show();
         }
 
         private void NavigateToGame(object sender, RoutedEventArgs e)
         {
             // Temporaire : doit router vers l'écran de choix de nom de joueur
             // et ensuite vers l'écran de jeu
-            Main.Visibility = Visibility.Visible;
-            Main.Content = new Game();
-        }
-
-        private void NavigateToHome(object sender, RoutedEventArgs e)
-        {
-            // Navigate to home page.
-            Main.Visibility = Visibility.Hidden;
+            Game game = new Game();
+            game.Show();
         }
     }
 }
