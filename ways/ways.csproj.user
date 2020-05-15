@@ -25,6 +25,9 @@
     <Compile Update="EmailParamPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="EndGameWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Game.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -38,6 +41,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="OrientationResultsPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="RankingWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -60,6 +66,9 @@
     <Page Update="EmailParamPage.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="EndGameWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Game.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -79,6 +88,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="OrientationResultsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="RankingWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

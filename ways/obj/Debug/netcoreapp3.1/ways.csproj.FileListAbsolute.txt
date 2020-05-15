@@ -50,3 +50,7 @@ C:\Users\chris\source\repos\ways\ways\obj\Debug\netcoreapp3.1\EditQuestionPage.b
 C:\Users\chris\source\repos\ways\ways\obj\Debug\netcoreapp3.1\EmailParamPage.baml
 C:\Users\chris\source\repos\ways\ways\obj\Debug\netcoreapp3.1\AdminHomePage.g.cs
 C:\Users\chris\source\repos\ways\ways\obj\Debug\netcoreapp3.1\AdminHomePage.baml
+C:\Users\chris\source\repos\ways\ways\obj\Debug\netcoreapp3.1\EndGameWindow.g.cs
+C:\Users\chris\source\repos\ways\ways\obj\Debug\netcoreapp3.1\RankingWindow.g.cs
+C:\Users\chris\source\repos\ways\ways\obj\Debug\netcoreapp3.1\EndGameWindow.baml
+C:\Users\chris\source\repos\ways\ways\obj\Debug\netcoreapp3.1\RankingWindow.baml
