@@ -49,5 +49,8 @@
                 </GridView>
             </ListView.View>
         </ListView>
+        <Button Content="Retour a l'accueil" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="640,496,0,0" VerticalAlignment="Top" Width="130" Height="40"
+                Background="White" Click="Button_Click"/>
+
     </Grid>
 </Window>
