@@ -55,5 +55,27 @@ namespace ADO
             DataBase.connection.Close();
             return result;
         }
+
+        public static int average_scores()
+        {
+            int retval;
+            string request = "SELECT AVG(score) FROM T_Score";
+            command = new SqlCommand(request, DataBase.connection);
+            DataBase.connection.Open();
+            retval = (int)command.ExecuteScalar();
+            DataBase.connection.Close();
+            return retval;
+        }
+
+        public static int total_participation()
+        {
+            int retval;
+            string request = "SELECT MAX(id_score) FROM T_Score";
+            command = new SqlCommand(request, DataBase.connection);
+            DataBase.connection.Open();
+            retval = (int)command.ExecuteScalar();
+            DataBase.connection.Close();
+            return retval;
+        }
     }
 }
