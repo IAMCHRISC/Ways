@@ -61,5 +61,27 @@ namespace ADO
             DataBase.connection.Close();
             return job;
         }
+
+        public static List<Jobs> GetJobs()
+        {
+            List<Jobs> jobsList = new List<Jobs>();
+            string request = "SELECT id_job, job_name FROM T_Job";
+            command = new SqlCommand(request, DataBase.connection);
+            DataBase.connection.Open();
+            reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                Jobs job = new Jobs
+                {
+                    Id = reader.GetInt32(0),
+                    Title = reader.GetString(1)
+                };
+                jobsList.Add(job);
+            }
+            reader.Close();
+            command.Dispose();
+            DataBase.connection.Close();
+            return jobsList;
+        }
     }
 }

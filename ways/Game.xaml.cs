@@ -123,13 +123,16 @@ namespace ways
                             {
                                 btn_reponse2.Background = Brushes.Green;
                             }
-                            if ((Boolean)hidden_reponse3.Content == true)
+                            if (question_type == "Carre")
                             {
-                                btn_reponse3.Background = Brushes.Green;
-                            }
-                            if ((Boolean)hidden_reponse4.Content == true)
-                            {
-                                btn_reponse4.Background = Brushes.Green;
+                                if ((Boolean)hidden_reponse3.Content == true)
+                                {
+                                    btn_reponse3.Background = Brushes.Green;
+                                }
+                                if ((Boolean)hidden_reponse4.Content == true)
+                                {
+                                    btn_reponse4.Background = Brushes.Green;
+                                }
                             }
                         }
                         break;
@@ -154,13 +157,16 @@ namespace ways
                             {
                                 btn_reponse1.Background = Brushes.Green;
                             }
-                            if ((Boolean)hidden_reponse3.Content == true)
+                            if (question_type == "Carre")
                             {
-                                btn_reponse3.Background = Brushes.Green;
-                            }
-                            if ((Boolean)hidden_reponse4.Content == true)
-                            {
-                                btn_reponse4.Background = Brushes.Green;
+                                if ((Boolean)hidden_reponse3.Content == true)
+                                {
+                                    btn_reponse3.Background = Brushes.Green;
+                                }
+                                if ((Boolean)hidden_reponse4.Content == true)
+                                {
+                                    btn_reponse4.Background = Brushes.Green;
+                                }
                             }
                         }
                         break;

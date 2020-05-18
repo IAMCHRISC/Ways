@@ -23,6 +23,10 @@ namespace ways
         {
             InitializeComponent();
             // récupérer les types de question
+            typesComboBox.ItemsSource = QuestionType.GetQuestionTypes();
+            firstLinkedJobsComboBox.ItemsSource = Jobs.GetJobs();
+            secondLinkedJobsComboBox.ItemsSource = Jobs.GetJobs();
+            thirdLinkedJobsComboBox.ItemsSource = Jobs.GetJobs();
         }
     }
 }
