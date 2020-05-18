@@ -6,9 +6,52 @@
       xmlns:local="clr-namespace:ways"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Administration - Ajouter une question">
+      Title="Administration - Ajouter une question"
+      Background="White">
 
     <Grid>
-        <Label Content="AddQuestionPage" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Label Content="AddQuestionPage" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <!--Enoncé de la question-->
+            <Label Content="Veuillez saisir l'énoncé de la question : *"/>
+            <TextBox x:Name="questionTitleTextBox"/>
+            
+            <!--Type de question-->
+            <Label Content="Quel est le type de question ? *"/>
+            <ComboBox x:Name="typesComboBox" Width="300">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Title}" />
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+
+            <!--Bloc pour une question "orientation"-->
+            <StackPanel x:Name="orientationStackPanel">
+                <StackPanel x:Name="orientationFirstAnswerStackPanel" Orientation="Vertical">
+                    <StackPanel x:Name="orientationFirstAnswerTitleStackPanel" Orientation="Horizontal">
+                        <Label Content="Réponse 1 : " Width="100"/>
+                        <TextBox Width="200" x:Name="firstAnswerTextBox"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Métier(s) lié(s) : " Width="100"/>
+                        <ComboBox x:Name="linkedJobsComboBox" Width="200">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <CheckBox Width="20"/>
+                                        <TextBlock Width="100" Text="Test"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+
+
+            <TextBlock Text="* Obligatoire" HorizontalAlignment="Center" FontSize="10"/>
+        </StackPanel>
     </Grid>
 </Page>

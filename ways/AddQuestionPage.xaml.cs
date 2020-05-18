@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ADO;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -21,6 +22,7 @@ namespace ways
         public AddQuestionPage()
         {
             InitializeComponent();
+            // récupérer les types de question
         }
     }
 }

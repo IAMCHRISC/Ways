@@ -46,5 +46,40 @@ namespace ADO
             DataBase.connection.Close();
             return questionsList;
         }
+
+        public static List<Questions> GetActiveQuestions()
+        {
+            List<Questions> questionsList = new List<Questions>();
+            string request = "SELECT id_question, entitled FROM T_Questions WHERE active = 'True'";
+            command = new SqlCommand(request, DataBase.connection);
+            DataBase.connection.Open();
+            reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                Questions question = new Questions
+                {
+                    Id = reader.GetInt32(0),
+                    Title = reader.GetString(1)
+                };
+                questionsList.Add(question);
+            }
+            reader.Close();
+            command.Dispose();
+            DataBase.connection.Close();
+            return questionsList;
+        }
+
+        public static bool DeleteById(int id)
+        {
+            bool result = false;
+            string request = "UPDATE T_Questions SET active = 'False' WHERE id_question = @id";
+            command = new SqlCommand(request, DataBase.connection);
+            command.Parameters.Add(new SqlParameter("@id", id));
+            DataBase.connection.Open();
+            result = command.ExecuteNonQuery() > 0;
+            command.Dispose();
+            DataBase.connection.Close();
+            return result;
+        }
     }
 }

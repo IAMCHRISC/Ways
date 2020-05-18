@@ -46,5 +46,18 @@ namespace ADO
             DataBase.connection.Close();
             return answersList;
         }
+
+        public static bool DeleteById(int questionId)
+        {
+            bool result = false;
+            string request = "UPDATE T_Answers SET active = 'False' WHERE id_question = @id";
+            command = new SqlCommand(request, DataBase.connection);
+            command.Parameters.Add(new SqlParameter("@id", questionId));
+            DataBase.connection.Open();
+            result = command.ExecuteNonQuery() > 0;
+            command.Dispose();
+            DataBase.connection.Close();
+            return result;
+        }
     }
 }

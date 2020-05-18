@@ -6,9 +6,27 @@
       xmlns:local="clr-namespace:ways"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Administration - Supprimer une question">
+      Title="Administration - Supprimer une question" Background="White">
 
     <Grid>
-        <Label Content="DeleteQuestionPage" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Label Content="DeleteQuestionPage" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label Content="Veuillez sélectionner une question à supprimer : *" HorizontalAlignment="Center"/>
+            <ComboBox x:Name="questionsComboBox" Width="300">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Id}" Width="20"/>
+                            <TextBlock Text=" - " Width="20"/>
+                            <TextBlock Text="{Binding Title}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <Button Content="Supprimer" Width="150" x:Name="deleteButton" Click="DeleteQuestion"/>
+            <TextBlock Text="Merci de sélectionner une question dans la liste." Foreground="Red" Visibility="Hidden" x:Name="errorTextBlock"/>
+            <TextBlock Text="* La suppression d'une question entraîne la suppression des réponses qui lui sont associées." TextWrapping="Wrap" FontSize="10"/>
+        </StackPanel>
     </Grid>
 </Page>
