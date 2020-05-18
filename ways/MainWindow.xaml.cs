@@ -27,7 +27,7 @@ namespace ways
 
         public void NavigateToOrientation(object sender, RoutedEventArgs e)
         {
-            NameChoiceWindow nameChoiceWindow = new NameChoiceWindow();
+            NameChoiceWindow nameChoiceWindow = new NameChoiceWindow(1); // 1 = Orientation
             nameChoiceWindow.Show();
         }
 
@@ -39,10 +39,8 @@ namespace ways
 
         private void NavigateToGame(object sender, RoutedEventArgs e)
         {
-            // Temporaire : doit router vers l'écran de choix de nom de joueur
-            // et ensuite vers l'écran de jeu
-            Game game = new Game();
-            game.Show();
+            NameChoiceWindow nameChoiceWindow = new NameChoiceWindow(2); // 2 = Game
+            nameChoiceWindow.Show();
         }
     }
 }

@@ -19,11 +19,16 @@ namespace ways
     /// </summary>
     public partial class Game : Window
     {
+        private string player;
         public SqlCommand command;
         public string question_type;
-        public Game()
+
+        public string Player { get => player; set => player = value; }
+
+        public Game(string player)
         {
             InitializeComponent();
+            Player = player;
             lauch_game();
         }
 

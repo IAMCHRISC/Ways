@@ -20,9 +20,14 @@ namespace ways
     /// </summary>
     public partial class NameChoiceWindow : Window
     {
-        public NameChoiceWindow()
+        private static int testChoice;
+
+        public static int TestChoice { get => testChoice; set => testChoice = value; }
+
+        public NameChoiceWindow(int choice)
         {
             InitializeComponent();
+            TestChoice = choice;
         }
 
         // Check if the given name is not empty
@@ -39,9 +44,18 @@ namespace ways
         public void NavigateToQuestions(object sender, RoutedEventArgs e)
         {
             if (CheckNameValidity()) {
-                OrientationQuestionWindow questionWindow = new OrientationQuestionWindow();
-                questionWindow.Show();
-                this.Close();
+                if(TestChoice == 1)
+                {
+                    OrientationQuestionWindow questionWindow = new OrientationQuestionWindow(textBox_Name.Text);
+                    questionWindow.Show();
+                    this.Close();
+                }
+                else if (TestChoice == 2)
+                {
+                    Game game = new Game(textBox_Name.Text);
+                    game.Show();
+                    this.Close();
+                }
             }
             else
             {
