@@ -18,9 +18,15 @@ namespace ways
     /// </summary>
     public partial class AdminHomePage : Window
     {
-        public AdminHomePage()
+        private string adminName;
+
+        public string AdminName { get => adminName; set => adminName = value; }
+
+        public AdminHomePage(string admin)
         {
             InitializeComponent();
+            AdminName = admin;
+            adminNameLabel.Content = $"Bienvenue, {AdminName}";
         }
 
         private void NavigateToAddQuestionPage(object sender, RoutedEventArgs e)
