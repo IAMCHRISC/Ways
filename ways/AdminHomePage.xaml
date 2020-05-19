@@ -11,7 +11,7 @@
 
     <Grid>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Width="200">
-            <Label Content="Bienvenue, " x:Name="adminNameLabel" HorizontalAlignment="Center"/>
+            <Label Content="" x:Name="adminNameLabel" HorizontalAlignment="Center"/>
             <Button Content="Ajouter une question" MinWidth="100" Margin="10,5,10,5" Click="NavigateToAddQuestionPage"/>
             <Button Content="Modifier une question" MinWidth="100" Margin="10,5,10,5" Click="NavigateToEditQuestionPage"/>
             <Button Content="Supprimer une question" MinWidth="100" Margin="10,5,10,5" Click="NavigateToDeleteQuestionPage"/>

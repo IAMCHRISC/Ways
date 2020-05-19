@@ -19,13 +19,17 @@
             
             <!--Type de question-->
             <Label Content="Quel est le type de question ? *"/>
-            <ComboBox x:Name="typesComboBox" Width="300">
-                <ComboBox.ItemTemplate>
-                    <DataTemplate>
-                        <TextBlock Text="{Binding Type}" />
-                    </DataTemplate>
-                </ComboBox.ItemTemplate>
-            </ComboBox>
+            <StackPanel Orientation="Horizontal">
+                <ComboBox x:Name="typesComboBox" Width="200">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Type}" />
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+                <Button Width="100" Content="Continuer" Click="DisplayAnswersPanel" x:Name="continueButton"/>
+            </StackPanel>
+            <TextBlock Text="Merci de sélectionner un type de question." Foreground="Red" HorizontalAlignment="Center" Visibility="Hidden" x:Name="typeErrorMessage"/>
 
             <!--Bloc pour une question "orientation"-->
             <StackPanel x:Name="orientationStackPanel" Visibility="Collapsed">
@@ -91,18 +95,14 @@
             </StackPanel>
             
             <!--Bloc pour une question "jeu"-->
-            <StackPanel x:Name="gameStackPanel">
+            <StackPanel x:Name="gameStackPanel" Visibility="Collapsed">
                 <!--première réponse-->
                 <StackPanel x:Name="gameFirstAnswerStackPanel" Orientation="Vertical">
                     <StackPanel x:Name="gameFirstAnswerTitleStackPanel" Orientation="Horizontal">
                         <Label Content="Réponse 1 : " Width="100"/>
                         <TextBox Width="200" x:Name="gameFirstAnswerTextBox"/>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <Label Content="Bonne réponse ? " Width="100"/>
-                        <RadioButton Content="Oui" VerticalAlignment="Center" Margin="40,0,0,0"/>
-                        <RadioButton Content="Non" VerticalAlignment="Center" Margin="40,0,0,0"/>
-                    </StackPanel>
+                    <RadioButton GroupName="goodAnswer" Content="Bonne réponse" VerticalAlignment="Center" HorizontalAlignment="Right"/>
                 </StackPanel>
 
                 <!--deuxième réponse-->
@@ -111,11 +111,7 @@
                         <Label Content="Réponse 2 : " Width="100"/>
                         <TextBox Width="200" x:Name="gameSecondAnswerTextBox"/>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <Label Content="Bonne réponse ? " Width="100"/>
-                        <RadioButton Content="Oui" VerticalAlignment="Center" Margin="40,0,0,0"/>
-                        <RadioButton Content="Non" VerticalAlignment="Center" Margin="40,0,0,0"/>
-                    </StackPanel>
+                    <RadioButton GroupName="goodAnswer" Content="Bonne réponse" VerticalAlignment="Center" HorizontalAlignment="Right"/>
                 </StackPanel>
 
                 <!--troisième réponse-->
@@ -124,11 +120,7 @@
                         <Label Content="Réponse 3 : " Width="100"/>
                         <TextBox Width="200" x:Name="gameThirdAnswerTextBox"/>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <Label Content="Bonne réponse ? " Width="100"/>
-                        <RadioButton Content="Oui" VerticalAlignment="Center" Margin="40,0,0,0"/>
-                        <RadioButton Content="Non" VerticalAlignment="Center" Margin="40,0,0,0"/>
-                    </StackPanel>
+                    <RadioButton GroupName="goodAnswer" Content="Bonne réponse" VerticalAlignment="Center" HorizontalAlignment="Right"/>
                 </StackPanel>
 
                 <!--quatrième réponse-->
@@ -137,12 +129,15 @@
                         <Label Content="Réponse 4 : " Width="100"/>
                         <TextBox Width="200" x:Name="gameFourthAnswerTextBox"/>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <Label Content="Bonne réponse ? " Width="100"/>
-                        <RadioButton Content="Oui" VerticalAlignment="Center" Margin="40,0,0,0"/>
-                        <RadioButton Content="Non" VerticalAlignment="Center" Margin="40,0,0,0"/>
-                    </StackPanel>
+                    <RadioButton GroupName="goodAnswer" Content="Bonne réponse" VerticalAlignment="Center" HorizontalAlignment="Right"/>
                 </StackPanel>
+                <Button Content="Ajouter" HorizontalAlignment="Right" Width="100" Click="AddGameQuestion"/>
+            </StackPanel>
+
+            <!--Bloc pour une question "marketing"-->
+            <StackPanel x:Name="marketingStackPanel" Visibility="Visible">
+                <!--Afficher le bouton de validation seulement-->
+                <Button Content="Ajouter" HorizontalAlignment="Right" Width="100" Click="AddMarketingQuestion"/>
             </StackPanel>
 
             <TextBlock Text="* Obligatoire" HorizontalAlignment="Center" FontSize="10"/>

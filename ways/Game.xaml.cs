@@ -19,11 +19,16 @@ namespace ways
     /// </summary>
     public partial class Game : Window
     {
+        private string player;
         public SqlCommand command;
         public string question_type;
-        public Game()
+
+        public string Player { get => player; set => player = value; }
+
+        public Game(string player)
         {
             InitializeComponent();
+            Player = player;
             lauch_game();
         }
 
@@ -87,10 +92,10 @@ namespace ways
                 hidden_id_question.Content = dr.GetInt32(0);
             }
 
-            if (lbl_question.Content == "")
+            if ((string)lbl_question.Content == "")
             {
                 Jeu.score = (int)lbl_score.Content;
-                EndGameWindow fenetre = new EndGameWindow();
+                EndGameWindow fenetre = new EndGameWindow(Player);
                 fenetre.Show();
                 this.Close();
             }

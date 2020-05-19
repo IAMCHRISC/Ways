@@ -24,17 +24,20 @@ namespace ways
         private List<Answers> answersList;
         private static int currentQuestionIndex;
         private static List<int> resultsList;
+        private string player;
 
         public List<Questions> QuestionsList { get => questionsList; set => questionsList = value; }
         public List<Answers> AnswersList { get => answersList; set => answersList = value; }
         public static int CurrentQuestionIndex { get => currentQuestionIndex; set => currentQuestionIndex = value; }
         public static List<int> ResultsList { get => resultsList; set => resultsList = value; }
+        public string Player { get => player; set => player = value; }
 
-        public OrientationQuestionWindow()
+        public OrientationQuestionWindow(string player)
         {
             InitializeComponent();
             QuestionsList = Questions.GetQuestionsByType(1); // 1 = Orientation
             ResultsList = new List<int>();
+            Player = player;
             numberOfQuestionsLabel.Content = "Nombre de questions : " + QuestionsList.Count;
             CurrentQuestionIndex = 0;
             UpdateView();

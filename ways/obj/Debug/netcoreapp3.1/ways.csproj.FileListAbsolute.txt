@@ -54,3 +54,5 @@ C:\Users\chris\source\repos\ways\ways\obj\Debug\netcoreapp3.1\EndGameWindow.g.cs
 C:\Users\chris\source\repos\ways\ways\obj\Debug\netcoreapp3.1\RankingWindow.g.cs
 C:\Users\chris\source\repos\ways\ways\obj\Debug\netcoreapp3.1\EndGameWindow.baml
 C:\Users\chris\source\repos\ways\ways\obj\Debug\netcoreapp3.1\RankingWindow.baml
+C:\Users\chris\source\repos\ways\ways\obj\Debug\netcoreapp3.1\MarketingWindow.g.cs
+C:\Users\chris\source\repos\ways\ways\obj\Debug\netcoreapp3.1\MarketingWindow.baml

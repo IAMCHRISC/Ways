@@ -81,5 +81,11 @@ namespace ADO
             DataBase.connection.Close();
             return result;
         }
+
+        public bool AddQuestion()
+        {
+            // TODO
+            return false;
+        }
     }
 }
