@@ -112,5 +112,27 @@ namespace ways
             }
             // Insertion en base
         }
+
+        private void AddMarketingQuestion(object sender, RoutedEventArgs e)
+        {
+            if (CheckQuestionValidity())
+            {
+                // On ajoute simplement la question en base
+                Questions marketingQuestion = new Questions
+                {
+                    Title = questionTitleTextBox.Text,
+                    Type = 3
+                };
+                if (marketingQuestion.AddQuestion())
+                {
+                    MessageBox.Show("Question marketing ajoutée !");
+                    questionTitleTextBox.Text = "";
+                }
+                else
+                {
+                    MessageBox.Show("Erreur serveur");
+                }
+            }
+        }
     }
 }

@@ -92,10 +92,10 @@ namespace ways
                 hidden_id_question.Content = dr.GetInt32(0);
             }
 
-            if (lbl_question.Content == "")
+            if ((string)lbl_question.Content == "")
             {
                 Jeu.score = (int)lbl_score.Content;
-                EndGameWindow fenetre = new EndGameWindow();
+                EndGameWindow fenetre = new EndGameWindow(Player);
                 fenetre.Show();
                 this.Close();
             }

@@ -18,20 +18,25 @@ namespace ways
     /// </summary>
     public partial class EndGameWindow : Window
     {
-        public EndGameWindow()
+        private string player;
+        public string Player { get => player; set => player = value; }
+        public EndGameWindow(string player)
         {
             InitializeComponent();
             lbl_score.Content = Jeu.score.ToString();
+            Player = player;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            // Redirection vers le formulaire marketing
+            MarketingWindow marketingWindow = new MarketingWindow();
+            marketingWindow.Show();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-
+            // Redirection vers le classement
             RankingWindow window = new RankingWindow();
             window.Show();
             this.Close();

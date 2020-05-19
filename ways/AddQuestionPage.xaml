@@ -95,7 +95,7 @@
             </StackPanel>
             
             <!--Bloc pour une question "jeu"-->
-            <StackPanel x:Name="gameStackPanel" Visibility="Visible">
+            <StackPanel x:Name="gameStackPanel" Visibility="Collapsed">
                 <!--première réponse-->
                 <StackPanel x:Name="gameFirstAnswerStackPanel" Orientation="Vertical">
                     <StackPanel x:Name="gameFirstAnswerTitleStackPanel" Orientation="Horizontal">
@@ -135,9 +135,9 @@
             </StackPanel>
 
             <!--Bloc pour une question "marketing"-->
-            <StackPanel x:Name="marketingStackPanel" Visibility="Collapsed">
-                <Label Content="marketing"/>
+            <StackPanel x:Name="marketingStackPanel" Visibility="Visible">
                 <!--Afficher le bouton de validation seulement-->
+                <Button Content="Ajouter" HorizontalAlignment="Right" Width="100" Click="AddMarketingQuestion"/>
             </StackPanel>
 
             <TextBlock Text="* Obligatoire" HorizontalAlignment="Center" FontSize="10"/>
