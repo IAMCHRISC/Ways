@@ -135,8 +135,9 @@
             </StackPanel>
 
             <!--Bloc pour une question "marketing"-->
-            <StackPanel x:Name="marketingStackPanel" Visibility="Visible">
+            <StackPanel x:Name="marketingStackPanel" Visibility="Collapsed">
                 <!--Afficher le bouton de validation seulement-->
+                <TextBlock Text="Merci de renseigner une question." Foreground="Red" Visibility="Hidden" x:Name="errorMessageMarketing"/>
                 <Button Content="Ajouter" HorizontalAlignment="Right" Width="100" Click="AddMarketingQuestion"/>
             </StackPanel>
 

@@ -117,6 +117,7 @@ namespace ways
         {
             if (CheckQuestionValidity())
             {
+                errorMessageMarketing.Visibility = Visibility.Hidden;
                 // On ajoute simplement la question en base
                 Questions marketingQuestion = new Questions
                 {
@@ -132,6 +133,10 @@ namespace ways
                 {
                     MessageBox.Show("Erreur serveur");
                 }
+            }
+            else
+            {
+                errorMessageMarketing.Visibility = Visibility.Visible;
             }
         }
     }
