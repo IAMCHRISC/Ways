@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\chris\\source\\repos\\ways\\ways\\ways.csproj": {}
+    "C:\\Users\\vgard\\source\\repos\\Ways\\ways\\ways.csproj": {}
   },
   "projects": {
-    "C:\\Users\\chris\\source\\repos\\ways\\ADO\\ADO.csproj": {
+    "C:\\Users\\vgard\\source\\repos\\Ways\\ADO\\ADO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\chris\\source\\repos\\ways\\ADO\\ADO.csproj",
+        "projectUniqueName": "C:\\Users\\vgard\\source\\repos\\Ways\\ADO\\ADO.csproj",
         "projectName": "ADO",
-        "projectPath": "C:\\Users\\chris\\source\\repos\\ways\\ADO\\ADO.csproj",
-        "packagesPath": "C:\\Users\\chris\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\chris\\source\\repos\\ways\\ADO\\obj\\",
+        "projectPath": "C:\\Users\\vgard\\source\\repos\\Ways\\ADO\\ADO.csproj",
+        "packagesPath": "C:\\Users\\vgard\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vgard\\source\\repos\\Ways\\ADO\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\chris\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\vgard\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -63,24 +64,25 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\chris\\source\\repos\\ways\\ways\\ways.csproj": {
+    "C:\\Users\\vgard\\source\\repos\\Ways\\ways\\ways.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\chris\\source\\repos\\ways\\ways\\ways.csproj",
+        "projectUniqueName": "C:\\Users\\vgard\\source\\repos\\Ways\\ways\\ways.csproj",
         "projectName": "ways",
-        "projectPath": "C:\\Users\\chris\\source\\repos\\ways\\ways\\ways.csproj",
-        "packagesPath": "C:\\Users\\chris\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\chris\\source\\repos\\ways\\ways\\obj\\",
+        "projectPath": "C:\\Users\\vgard\\source\\repos\\Ways\\ways\\ways.csproj",
+        "packagesPath": "C:\\Users\\vgard\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vgard\\source\\repos\\Ways\\ways\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\chris\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\vgard\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -94,8 +96,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\chris\\source\\repos\\ways\\ADO\\ADO.csproj": {
-                "projectPath": "C:\\Users\\chris\\source\\repos\\ways\\ADO\\ADO.csproj"
+              "C:\\Users\\vgard\\source\\repos\\Ways\\ADO\\ADO.csproj": {
+                "projectPath": "C:\\Users\\vgard\\source\\repos\\Ways\\ADO\\ADO.csproj"
               }
             }
           }
@@ -126,7 +128,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

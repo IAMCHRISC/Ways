@@ -7,3 +7,11 @@ C:\Users\chris\source\repos\ways\ADO\bin\Debug\netstandard2.0\ADO.pdb
 C:\Users\chris\source\repos\ways\ADO\obj\Debug\netstandard2.0\ADO.csproj.CoreCompileInputs.cache
 C:\Users\chris\source\repos\ways\ADO\obj\Debug\netstandard2.0\ADO.dll
 C:\Users\chris\source\repos\ways\ADO\obj\Debug\netstandard2.0\ADO.pdb
+C:\Users\vgard\source\repos\Ways\ADO\bin\Debug\netstandard2.0\ADO.deps.json
+C:\Users\vgard\source\repos\Ways\ADO\bin\Debug\netstandard2.0\ADO.dll
+C:\Users\vgard\source\repos\Ways\ADO\bin\Debug\netstandard2.0\ADO.pdb
+C:\Users\vgard\source\repos\Ways\ADO\obj\Debug\netstandard2.0\ADO.csprojAssemblyReference.cache
+C:\Users\vgard\source\repos\Ways\ADO\obj\Debug\netstandard2.0\ADO.AssemblyInfoInputs.cache
+C:\Users\vgard\source\repos\Ways\ADO\obj\Debug\netstandard2.0\ADO.AssemblyInfo.cs
+C:\Users\vgard\source\repos\Ways\ADO\obj\Debug\netstandard2.0\ADO.dll
+C:\Users\vgard\source\repos\Ways\ADO\obj\Debug\netstandard2.0\ADO.pdb

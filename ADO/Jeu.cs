@@ -42,13 +42,16 @@ namespace ADO
             return result;
         }
 
-        public static bool save_score()
+        public static bool save_score(string username, int score)
         {
             bool result = false;
             string request = "INSERT INTO T_Score VALUES (@username, @score, getdate()); SELECT @@identity";
             command = new SqlCommand(request, DataBase.connection);
+            command.Parameters.Add(new SqlParameter("@username", username));
+            command.Parameters.Add(new SqlParameter("@score", score));
             DataBase.connection.Open();
-            if ((int)command.ExecuteScalar() > 0)
+            int a = command.ExecuteNonQuery();
+            if (a == 1)
             {
                 result = true;
             }

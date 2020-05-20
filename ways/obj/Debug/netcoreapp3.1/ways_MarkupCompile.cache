@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\chris\source\repos\ways\ways\obj\Debug\netcoreapp3.1\
+C:\Users\vgard\source\repos\Ways\ways\obj\Debug\netcoreapp3.1\
 ways
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
-C:\Users\chris\source\repos\ways\ways\App.xaml
+C:\Users\vgard\source\repos\Ways\ways\App.xaml
 16-1406645853
 
 18-635908354
-194-263926041
+1942040448987
 AddQuestionPage.xaml;AdminHomePage.xaml;DeleteQuestionPage.xaml;EditGameLadderPage.xaml;EditQuestionPage.xaml;EmailParamPage.xaml;EndGameWindow.xaml;Game.xaml;LoginAdministration.xaml;MainWindow.xaml;MarketingWindow.xaml;NameChoiceWindow.xaml;OrientationEmailPage.xaml;OrientationQuestionWindow.xaml;OrientationResultsPage.xaml;RankingWindow.xaml;
 
 False
