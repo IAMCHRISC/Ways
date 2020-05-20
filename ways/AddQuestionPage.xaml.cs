@@ -112,11 +112,83 @@ namespace ways
             gameFourthAnswerTextBox.Text = "";
         }
 
+        private void AddOrientationQuestion(object sender, RoutedEventArgs e)
+        {
+            // Contrôle qu'un intitulé pour la question a été saisi
+            if (CheckQuestionValidity())
+            {
+                errorMessageOrientation.Visibility = Visibility.Hidden;
+                Questions question = new Questions();
+                question.Title = questionTitleTextBox.Text;
+                question.Type = QuestionType;
+
+                List<TextBox> answersTextBox = new List<TextBox>();
+                answersTextBox.Add(firstOrientationAnswerTextBox);
+                answersTextBox.Add(secondOrientationAnswerTextBox);
+                answersTextBox.Add(thirdOrientationAnswerTextBox);
+                // Vérification que toutes les réponses ont été saisies
+                if (CheckAnswersValidity(answersTextBox))
+                {
+                    errorMessageOrientation.Visibility = Visibility.Hidden;
+                    // Insertion de la question
+                    if (question.AddQuestion())
+                    {
+                        // Insertion des réponses
+                        Answers answer1 = new Answers
+                        {
+                            Title = firstOrientationAnswerTextBox.Text,
+                            Solution = true, // Pour les questions orientation, on considère que c'est toujours une bonne réponse
+                            QuestionId = question.Id
+                        };
+                        Answers answer2 = new Answers
+                        {
+                            Title = secondOrientationAnswerTextBox.Text,
+                            Solution = true, // Pour les questions orientation, on considère que c'est toujours une bonne réponse
+                            QuestionId = question.Id
+                        };
+                        Answers answer3 = new Answers
+                        {
+                            Title = thirdOrientationAnswerTextBox.Text,
+                            Solution = true, // Pour les questions orientation, on considère que c'est toujours une bonne réponse
+                            QuestionId = question.Id
+                        };
+                        if (answer1.AddAnswer() && answer2.AddAnswer() && answer3.AddAnswer())
+                        {
+                            // Insertion des correspondances métiers : TODO
+                        }
+                        else
+                        {
+                            // Les réponses n'ont pas été toutes ajoutées
+                            MessageBox.Show("Les réponses n'ont pas toutes été ajoutées.", "Erreur");
+                        }
+                    }
+                    else
+                    {
+                        // La question n'a pas été ajoutée
+                        MessageBox.Show("La question n'a pas été ajoutée.", "Erreur");
+                    }
+                }
+                else
+                {
+                    // Message erreur : saisir toutes les réponses
+                    errorMessageOrientation.Text = "Merci de saisir toutes les réponses.";
+                    errorMessageOrientation.Visibility = Visibility.Visible;
+                }
+            }
+            else
+            {
+                // Message erreur : saisir une question
+                errorMessageOrientation.Text = "Merci de saisir une question.";
+                errorMessageOrientation.Visibility = Visibility.Visible;
+            }
+        }
+
         private void AddGameQuestion(object sender, RoutedEventArgs e)
         {
             // Contrôle qu'un intitulé pour la question a été saisi
             if (CheckQuestionValidity())
             {
+                errorMessageGame.Visibility = Visibility.Hidden;
                 Questions question = new Questions();
                 question.Title = questionTitleTextBox.Text;
                 question.Type = QuestionType;
@@ -129,12 +201,15 @@ namespace ways
                 // Vérification que toutes les réponses ont été saisies
                 if (CheckAnswersValidity(answersTextBox))
                 {
+                    errorMessageGame.Visibility = Visibility.Hidden;
                     // Contrôle qu'une bonne réponse est indiquée
                     if (CheckClickedGoodAnswer())
                     {
+                        errorMessageGame.Visibility = Visibility.Hidden;
                         // Insertion de la question
                         if (question.AddQuestion())
                         {
+                            errorMessageGame.Visibility = Visibility.Hidden;
                             // Insertion des réponses
                             Answers answer1 = new Answers
                             {
@@ -162,6 +237,7 @@ namespace ways
                             };
                             if(answer1.AddAnswer() && answer2.AddAnswer() && answer3.AddAnswer() && answer4.AddAnswer())
                             {
+                                errorMessageGame.Visibility = Visibility.Hidden;
                                 // Les réponses ont été ajoutées
                                 MessageBox.Show("La question a bien été ajoutée.\nLes réponses ont bien été ajoutées.", "Succès");
                                 ReinitFields();
@@ -202,6 +278,7 @@ namespace ways
 
         private void AddMarketingQuestion(object sender, RoutedEventArgs e)
         {
+            // Contrôle qu'un intitulé pour la question a été saisi
             if (CheckQuestionValidity())
             {
                 errorMessageMarketing.Visibility = Visibility.Hidden;
@@ -213,16 +290,20 @@ namespace ways
                 };
                 if (marketingQuestion.AddQuestion())
                 {
-                    MessageBox.Show("Question marketing ajoutée !");
-                    questionTitleTextBox.Text = "";
+                    // La question a bien été ajoutée
+                    MessageBox.Show("Question marketing ajoutée.", "Succès");
+                    ReinitFields();
                 }
                 else
                 {
-                    MessageBox.Show("Erreur serveur");
+                    // La question n'a pas été ajoutée
+                    MessageBox.Show("La question n'a pas été ajoutée.", "Erreur");
                 }
             }
             else
             {
+                // Message erreur : saisir une question
+                errorMessageMarketing.Text = "Merci de saisir une question.";
                 errorMessageMarketing.Visibility = Visibility.Visible;
             }
         }

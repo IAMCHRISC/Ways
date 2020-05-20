@@ -32,12 +32,12 @@
             <TextBlock Text="Merci de sélectionner un type de question." Foreground="Red" HorizontalAlignment="Center" Visibility="Hidden" x:Name="typeErrorMessage"/>
 
             <!--Bloc pour une question "orientation"-->
-            <StackPanel x:Name="orientationStackPanel" Visibility="Collapsed">
+            <StackPanel x:Name="orientationStackPanel" Visibility="Visible">
                 <!--première réponse-->
                 <StackPanel x:Name="orientationFirstAnswerStackPanel" Orientation="Vertical">
                     <StackPanel x:Name="orientationFirstAnswerTitleStackPanel" Orientation="Horizontal">
                         <Label Content="Réponse 1 : " Width="100"/>
-                        <TextBox Width="200" x:Name="firstAnswerTextBox"/>
+                        <TextBox Width="200" x:Name="firstOrientationAnswerTextBox"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Label Content="Métier(s) lié(s) : " Width="100"/>
@@ -57,7 +57,7 @@
                 <StackPanel x:Name="orientationSecondAnswerStackPanel" Orientation="Vertical">
                     <StackPanel x:Name="orientationSecondAnswerTitleStackPanel" Orientation="Horizontal">
                         <Label Content="Réponse 2 : " Width="100"/>
-                        <TextBox Width="200" x:Name="secondAnswerTextBox"/>
+                        <TextBox Width="200" x:Name="secondOrientationAnswerTextBox"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Label Content="Métier(s) lié(s) : " Width="100"/>
@@ -77,7 +77,7 @@
                 <StackPanel x:Name="orientationThirdAnswerStackPanel" Orientation="Vertical">
                     <StackPanel x:Name="orientationThirdAnswerTitleStackPanel" Orientation="Horizontal">
                         <Label Content="Réponse 3 : " Width="100"/>
-                        <TextBox Width="200" x:Name="ThirdAnswerTextBox"/>
+                        <TextBox Width="200" x:Name="thirdOrientationAnswerTextBox"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Label Content="Métier(s) lié(s) : " Width="100"/>
@@ -92,6 +92,9 @@
                         </ComboBox>
                     </StackPanel>
                 </StackPanel>
+
+                <TextBlock Text="" Foreground="Red" Visibility="Hidden" x:Name="errorMessageOrientation"/>
+                <Button Content="Ajouter" HorizontalAlignment="Right" Width="100" Click="AddOrientationQuestion"/>
             </StackPanel>
             
             <!--Bloc pour une question "jeu"-->
@@ -146,7 +149,7 @@
             <!--Bloc pour une question "marketing"-->
             <StackPanel x:Name="marketingStackPanel" Visibility="Collapsed">
                 <!--Afficher le bouton de validation seulement-->
-                <TextBlock Text="Merci de renseigner une question." Foreground="Red" Visibility="Hidden" x:Name="errorMessageMarketing"/>
+                <TextBlock Text="" Foreground="Red" Visibility="Hidden" x:Name="errorMessageMarketing"/>
                 <Button Content="Ajouter" HorizontalAlignment="Right" Width="100" Click="AddMarketingQuestion"/>
             </StackPanel>
 
