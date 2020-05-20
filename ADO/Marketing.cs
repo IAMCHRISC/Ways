@@ -23,9 +23,8 @@ namespace ADO
 
         public static bool save(string rep1, string rep2, string rep3, string rep4, string rep5, string rep6, string rep7, string rep8, string rep9, string rep10)
         {
-            string request = "INSERT INTO T_Additional_Info VALUES (@username, @rep1, @rep2, @rep3, @rep4, @rep5, @rep6, @rep7, @rep8, @rep9, @rep10)";
+            string request = "INSERT INTO T_Additional_Info VALUES ('', @rep1, @rep2, @rep3, @rep4, @rep5, @rep6, @rep7, @rep8, @rep9, @rep10)";
             command = new SqlCommand(request, DataBase.connection);
-            command.Parameters.Add(new SqlParameter("@username", ""));
             command.Parameters.Add(new SqlParameter("@rep1", rep1));
             command.Parameters.Add(new SqlParameter("@rep2", rep2));
             command.Parameters.Add(new SqlParameter("@rep3", rep3));

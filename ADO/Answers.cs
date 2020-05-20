@@ -76,5 +76,23 @@ namespace ADO
             DataBase.connection.Close();
             return Id > 0;
         }
+
+        public bool AddLinkedJobs(List<int> jobsIdList)
+        {
+            bool result;
+            string request = "INSERT INTO T_Appartenir (id_job, id_answer) VALUES (";
+            for(int i = 0; i < jobsIdList.Count; i++)
+            {
+                request += (i == 0) ? $"({jobsIdList[i]}, @id)" : $",({jobsIdList[i]}, @id)";
+            }
+            request += ")";
+            command = new SqlCommand(request, DataBase.connection);
+            command.Parameters.Add(new SqlParameter("@id", Id));
+            DataBase.connection.Open();
+            result = command.ExecuteNonQuery() > 0;
+            command.Dispose();
+            DataBase.connection.Close();
+            return result;
+        }
     }
 }

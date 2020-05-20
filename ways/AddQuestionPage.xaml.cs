@@ -154,7 +154,44 @@ namespace ways
                         };
                         if (answer1.AddAnswer() && answer2.AddAnswer() && answer3.AddAnswer())
                         {
-                            // Insertion des correspondances métiers : TODO
+                            // Insertion des correspondances métiers
+                            var firstAnswerJobList = firstJobsPanel.Children.OfType<CheckBox>().Where(x => x.IsChecked == true);
+                            var secondAnswerJobList = secondJobsPanel.Children.OfType<CheckBox>().Where(x => x.IsChecked == true);
+                            var thirdAnswerJobList = thirdJobsPanel.Children.OfType<CheckBox>().Where(x => x.IsChecked == true);
+
+                            List<int> firstAnswerJobsIdList = new List<int>();
+                            foreach(CheckBox cb in firstAnswerJobList)
+                            {
+                                firstAnswerJobsIdList.Add((int)cb.Tag);
+                            }
+
+                            List<int> secondAnswerJobsIdList = new List<int>();
+                            foreach (CheckBox cb in secondAnswerJobList)
+                            {
+                                secondAnswerJobsIdList.Add((int)cb.Tag);
+                            }
+
+                            List<int> thirdAnswerJobsIdList = new List<int>();
+                            foreach (CheckBox cb in thirdAnswerJobList)
+                            {
+                                thirdAnswerJobsIdList.Add((int)cb.Tag);
+                            }
+
+                            if (answer1.AddLinkedJobs(firstAnswerJobsIdList) 
+                                && answer2.AddLinkedJobs(secondAnswerJobsIdList) 
+                                && answer3.AddLinkedJobs(thirdAnswerJobsIdList))
+                            {
+                                // Les correspondances ont bien été ajoutées
+                                MessageBox.Show("La question a bien été ajoutée.\n" +
+                                    "Les réponses ont bien été ajoutées.\n" +
+                                    "Les correspondances métiers ont bien été ajoutées.", "Succès");
+                                ReinitFields(); // TODO : surcharger pour vider les champs 'orientation' aussi
+                            }
+                            else
+                            {
+                                // Les correspondances n'ont pas toutes été ajoutées
+                                MessageBox.Show("Les réponses n'ont pas toutes été ajoutées.", "Erreur");
+                            }
                         }
                         else
                         {

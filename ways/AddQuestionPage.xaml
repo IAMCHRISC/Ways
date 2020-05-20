@@ -39,13 +39,13 @@
                         <Label Content="Réponse 1 : " Width="100"/>
                         <TextBox Width="200" x:Name="firstOrientationAnswerTextBox"/>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal" x:Name="firstJobsPanel">
                         <Label Content="Métier(s) lié(s) : " Width="100"/>
                         <ComboBox x:Name="firstLinkedJobsComboBox" Width="200">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
-                                    <StackPanel Orientation="Horizontal" x:Name="firstJobsPanel">
-                                        <CheckBox Width="200" Content="{Binding Title}" />
+                                    <StackPanel Orientation="Horizontal" >
+                                        <CheckBox Width="200" Content="{Binding Title}" Tag="{Binding Id}"/>
                                     </StackPanel>
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>
@@ -59,13 +59,13 @@
                         <Label Content="Réponse 2 : " Width="100"/>
                         <TextBox Width="200" x:Name="secondOrientationAnswerTextBox"/>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal" x:Name="secondJobsPanel">
                         <Label Content="Métier(s) lié(s) : " Width="100"/>
                         <ComboBox x:Name="secondLinkedJobsComboBox" Width="200">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
-                                    <StackPanel Orientation="Horizontal" x:Name="secondJobsPanel">
-                                        <CheckBox Width="200" Content="{Binding Title}" />
+                                    <StackPanel Orientation="Horizontal">
+                                        <CheckBox Width="200" Content="{Binding Title}" Tag="{Binding Id}"/>
                                     </StackPanel>
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>
@@ -79,13 +79,13 @@
                         <Label Content="Réponse 3 : " Width="100"/>
                         <TextBox Width="200" x:Name="thirdOrientationAnswerTextBox"/>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal" x:Name="thirdJobsPanel">
                         <Label Content="Métier(s) lié(s) : " Width="100"/>
                         <ComboBox x:Name="thirdLinkedJobsComboBox" Width="200">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
-                                    <StackPanel Orientation="Horizontal" x:Name="thirdJobsPanel">
-                                        <CheckBox Width="200" Content="{Binding Title}" />
+                                    <StackPanel Orientation="Horizontal">
+                                        <CheckBox Width="200" Content="{Binding Title}" Tag="{Binding Id}"/>
                                     </StackPanel>
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>

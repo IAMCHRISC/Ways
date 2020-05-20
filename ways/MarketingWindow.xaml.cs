@@ -20,9 +20,13 @@ namespace ways
     /// </summary>
     public partial class MarketingWindow : Window
     {
-        public MarketingWindow()
+        private string player;
+
+        public string Player { get => player; set => player = value; }
+        public MarketingWindow(string player)
         {
             InitializeComponent();
+            Player = player;
             display_info();
         }
 
@@ -80,9 +84,10 @@ namespace ways
 
             if (retval == true)
             {
-                // Redirection vers le classement plutôt
-                //MainWindow window = new MainWindow();
-                //window.Show();
+                Jeu.score = Jeu.score + 5;
+                Jeu.save_score(Player, Jeu.score);
+                RankingWindow window = new RankingWindow();
+                window.Show();
                 this.Close();
             }
         }
