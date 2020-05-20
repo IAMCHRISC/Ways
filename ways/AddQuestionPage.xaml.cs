@@ -1,6 +1,7 @@
 ﻿using ADO;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -88,6 +89,29 @@ namespace ways
             return isValid;
         }
 
+        private bool CheckClickedGoodAnswer()
+        {
+            bool isGoodAnswerClicked = false;
+            foreach (RadioButton radioButton in gameGoodAnswerStackPanel.Children)
+            {
+                if (radioButton.IsChecked == true)
+                {
+                    isGoodAnswerClicked = true;
+                    break;
+                }
+            }
+            return isGoodAnswerClicked;
+        }
+
+        private void ReinitFields()
+        {
+            questionTitleTextBox.Text = "";
+            gameFirstAnswerTextBox.Text = "";
+            gameSecondAnswerTextBox.Text = "";
+            gameThirdAnswerTextBox.Text = "";
+            gameFourthAnswerTextBox.Text = "";
+        }
+
         private void AddGameQuestion(object sender, RoutedEventArgs e)
         {
             // Contrôle qu'un intitulé pour la question a été saisi
@@ -97,20 +121,83 @@ namespace ways
                 question.Title = questionTitleTextBox.Text;
                 question.Type = QuestionType;
 
-                // Contrôle au niveaux des réponses
                 List<TextBox> answersTextBox = new List<TextBox>();
                 answersTextBox.Add(gameFirstAnswerTextBox);
                 answersTextBox.Add(gameSecondAnswerTextBox);
                 answersTextBox.Add(gameThirdAnswerTextBox);
                 answersTextBox.Add(gameFourthAnswerTextBox);
-                // - vérifier qu'elles sont toutes remplies
+                // Vérification que toutes les réponses ont été saisies
                 if (CheckAnswersValidity(answersTextBox))
                 {
-                    // - vérifier qu'une bonne réponse est indiquée
-
+                    // Contrôle qu'une bonne réponse est indiquée
+                    if (CheckClickedGoodAnswer())
+                    {
+                        // Insertion de la question
+                        if (question.AddQuestion())
+                        {
+                            // Insertion des réponses
+                            Answers answer1 = new Answers
+                            {
+                                Title = gameFirstAnswerTextBox.Text,
+                                Solution = ((bool)rb1.IsChecked) ? true : false,
+                                QuestionId = question.Id
+                            };
+                            Answers answer2 = new Answers
+                            {
+                                Title = gameSecondAnswerTextBox.Text,
+                                Solution = ((bool)rb2.IsChecked) ? true : false,
+                                QuestionId = question.Id
+                            };
+                            Answers answer3 = new Answers
+                            {
+                                Title = gameThirdAnswerTextBox.Text,
+                                Solution = ((bool)rb3.IsChecked) ? true : false,
+                                QuestionId = question.Id
+                            };
+                            Answers answer4 = new Answers
+                            {
+                                Title = gameFourthAnswerTextBox.Text,
+                                Solution = ((bool)rb4.IsChecked) ? true : false,
+                                QuestionId = question.Id
+                            };
+                            if(answer1.AddAnswer() && answer2.AddAnswer() && answer3.AddAnswer() && answer4.AddAnswer())
+                            {
+                                // Les réponses ont été ajoutées
+                                MessageBox.Show("La question a bien été ajoutée.\nLes réponses ont bien été ajoutées.", "Succès");
+                                ReinitFields();
+                            }
+                            else
+                            {
+                                // Les réponses n'ont pas été toutes ajoutées
+                                MessageBox.Show("Les réponses n'ont pas toutes été ajoutées.", "Erreur");
+                            }
+                        }
+                        else
+                        {
+                            // La question n'a pas été ajoutée
+                            MessageBox.Show("La question n'a pas été ajoutée.", "Erreur");
+                        }
+                    }
+                    else
+                    {
+                        // Message erreur : indiquer une bonne réponse
+                        errorMessageGame.Text = "Merci d'indiquer une bonne réponse.";
+                        errorMessageGame.Visibility = Visibility.Visible;
+                    }
+                }
+                else
+                {
+                    // Message erreur : saisir toutes les réponses
+                    errorMessageGame.Text = "Merci de saisir toutes les réponses.";
+                    errorMessageGame.Visibility = Visibility.Visible;
                 }
             }
-            // Insertion en base
+            else
+            {
+                // Message erreur : saisir une question
+                errorMessageGame.Text = "Merci de saisir une question.";
+                errorMessageGame.Visibility = Visibility.Visible;
+            }
         }
 
         private void AddMarketingQuestion(object sender, RoutedEventArgs e)

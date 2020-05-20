@@ -102,7 +102,6 @@
                         <Label Content="Réponse 1 : " Width="100"/>
                         <TextBox Width="200" x:Name="gameFirstAnswerTextBox"/>
                     </StackPanel>
-                    <RadioButton GroupName="goodAnswer" Content="Bonne réponse" VerticalAlignment="Center" HorizontalAlignment="Right"/>
                 </StackPanel>
 
                 <!--deuxième réponse-->
@@ -111,7 +110,6 @@
                         <Label Content="Réponse 2 : " Width="100"/>
                         <TextBox Width="200" x:Name="gameSecondAnswerTextBox"/>
                     </StackPanel>
-                    <RadioButton GroupName="goodAnswer" Content="Bonne réponse" VerticalAlignment="Center" HorizontalAlignment="Right"/>
                 </StackPanel>
 
                 <!--troisième réponse-->
@@ -120,7 +118,6 @@
                         <Label Content="Réponse 3 : " Width="100"/>
                         <TextBox Width="200" x:Name="gameThirdAnswerTextBox"/>
                     </StackPanel>
-                    <RadioButton GroupName="goodAnswer" Content="Bonne réponse" VerticalAlignment="Center" HorizontalAlignment="Right"/>
                 </StackPanel>
 
                 <!--quatrième réponse-->
@@ -129,8 +126,20 @@
                         <Label Content="Réponse 4 : " Width="100"/>
                         <TextBox Width="200" x:Name="gameFourthAnswerTextBox"/>
                     </StackPanel>
-                    <RadioButton GroupName="goodAnswer" Content="Bonne réponse" VerticalAlignment="Center" HorizontalAlignment="Right"/>
                 </StackPanel>
+                
+                <!--Bonne réponse ?-->
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Bonne réponse :" Width="100"/>
+                    <StackPanel x:Name="gameGoodAnswerStackPanel" Orientation="Vertical" Width="200">
+                        <RadioButton GroupName="goodAnswer" x:Name="rb1" Content="Réponse 1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <RadioButton GroupName="goodAnswer" x:Name="rb2" Content="Réponse 2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <RadioButton GroupName="goodAnswer" x:Name="rb3" Content="Réponse 3" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <RadioButton GroupName="goodAnswer" x:Name="rb4" Content="Réponse 4" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <TextBlock Text="" Foreground="Red" Visibility="Hidden" x:Name="errorMessageGame"/>
                 <Button Content="Ajouter" HorizontalAlignment="Right" Width="100" Click="AddGameQuestion"/>
             </StackPanel>
 
