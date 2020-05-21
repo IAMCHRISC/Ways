@@ -80,12 +80,11 @@ namespace ADO
         public bool AddLinkedJobs(List<int> jobsIdList)
         {
             bool result;
-            string request = "INSERT INTO T_Appartenir (id_job, id_answer) VALUES (";
+            string request = "INSERT INTO T_Appartenir (id_job, id_answer) VALUES ";
             for(int i = 0; i < jobsIdList.Count; i++)
             {
                 request += (i == 0) ? $"({jobsIdList[i]}, @id)" : $",({jobsIdList[i]}, @id)";
             }
-            request += ")";
             command = new SqlCommand(request, DataBase.connection);
             command.Parameters.Add(new SqlParameter("@id", Id));
             DataBase.connection.Open();

@@ -21,17 +21,34 @@ namespace ways
     public partial class AddQuestionPage : Page
     {
         private static int questionType;
+        private List<Jobs> jobsList;
 
         public static int QuestionType { get => questionType; set => questionType = value; }
+        public List<Jobs> JobsList { get => jobsList; set => jobsList = value; }
 
         public AddQuestionPage()
         {
             InitializeComponent();
             // récupérer les types de question
             typesComboBox.ItemsSource = ADO.QuestionType.GetQuestionTypes();
-            firstLinkedJobsComboBox.ItemsSource = Jobs.GetJobs();
-            secondLinkedJobsComboBox.ItemsSource = Jobs.GetJobs();
-            thirdLinkedJobsComboBox.ItemsSource = Jobs.GetJobs();
+            JobsList = Jobs.GetJobs();
+            foreach (Jobs job in JobsList)
+            {
+                CheckBox cb1 = new CheckBox();
+                cb1.Content = job.Title;
+                cb1.Tag = job.Id;
+                myFirstJobsPanel.Children.Add(cb1);
+
+                CheckBox cb2 = new CheckBox();
+                cb2.Content = job.Title;
+                cb2.Tag = job.Id;
+                mySecondJobsPanel.Children.Add(cb2);
+
+                CheckBox cb3 = new CheckBox();
+                cb3.Content = job.Title;
+                cb3.Tag = job.Id;
+                myThirdJobsPanel.Children.Add(cb3);
+            }
         }
 
         private void DisplayAnswersPanel(object sender, RoutedEventArgs e)
@@ -65,6 +82,7 @@ namespace ways
                 typeErrorMessage.Visibility = Visibility.Visible;
             }
         }
+
         private bool CheckQuestionValidity()
         {
             bool isValid = false;
@@ -103,13 +121,36 @@ namespace ways
             return isGoodAnswerClicked;
         }
 
+        private bool CheckLinkedJobs(StackPanel container)
+        {
+            var cbList = container.Children.OfType<CheckBox>().Where(x => x.IsChecked == true);
+            return cbList.Count() > 0;
+        }
+
         private void ReinitFields()
         {
+            // Champ 'question'
             questionTitleTextBox.Text = "";
+            // Champs réponses 'jeu'
             gameFirstAnswerTextBox.Text = "";
             gameSecondAnswerTextBox.Text = "";
             gameThirdAnswerTextBox.Text = "";
             gameFourthAnswerTextBox.Text = "";
+            // Champs réponses 'orientation'
+            firstOrientationAnswerTextBox.Text = "";
+            secondOrientationAnswerTextBox.Text = "";
+            thirdOrientationAnswerTextBox.Text = "";
+        }
+
+        private List<int> GetCheckedJobsIdList(StackPanel container)
+        {
+            var cbList = container.Children.OfType<CheckBox>().Where(x => x.IsChecked == true);
+            List<int> idList = new List<int>();
+            foreach (CheckBox cb in cbList)
+            {
+                idList.Add((int)cb.Tag);
+            }
+            return idList;
         }
 
         private void AddOrientationQuestion(object sender, RoutedEventArgs e)
@@ -126,83 +167,78 @@ namespace ways
                 answersTextBox.Add(firstOrientationAnswerTextBox);
                 answersTextBox.Add(secondOrientationAnswerTextBox);
                 answersTextBox.Add(thirdOrientationAnswerTextBox);
+
                 // Vérification que toutes les réponses ont été saisies
                 if (CheckAnswersValidity(answersTextBox))
                 {
                     errorMessageOrientation.Visibility = Visibility.Hidden;
-                    // Insertion de la question
-                    if (question.AddQuestion())
+                    // Contrôle que chaque réponse a bien un métier lié
+                    if (CheckLinkedJobs(myFirstJobsPanel) && CheckLinkedJobs(mySecondJobsPanel) && CheckLinkedJobs(myThirdJobsPanel))
                     {
-                        // Insertion des réponses
-                        Answers answer1 = new Answers
-                        {
-                            Title = firstOrientationAnswerTextBox.Text,
-                            Solution = true, // Pour les questions orientation, on considère que c'est toujours une bonne réponse
-                            QuestionId = question.Id
-                        };
-                        Answers answer2 = new Answers
-                        {
-                            Title = secondOrientationAnswerTextBox.Text,
-                            Solution = true, // Pour les questions orientation, on considère que c'est toujours une bonne réponse
-                            QuestionId = question.Id
-                        };
-                        Answers answer3 = new Answers
-                        {
-                            Title = thirdOrientationAnswerTextBox.Text,
-                            Solution = true, // Pour les questions orientation, on considère que c'est toujours une bonne réponse
-                            QuestionId = question.Id
-                        };
-                        if (answer1.AddAnswer() && answer2.AddAnswer() && answer3.AddAnswer())
-                        {
-                            // Insertion des correspondances métiers
-                            var firstAnswerJobList = firstJobsPanel.Children.OfType<CheckBox>().Where(x => x.IsChecked == true);
-                            var secondAnswerJobList = secondJobsPanel.Children.OfType<CheckBox>().Where(x => x.IsChecked == true);
-                            var thirdAnswerJobList = thirdJobsPanel.Children.OfType<CheckBox>().Where(x => x.IsChecked == true);
-
-                            List<int> firstAnswerJobsIdList = new List<int>();
-                            foreach(CheckBox cb in firstAnswerJobList)
+                        errorMessageOrientation.Visibility = Visibility.Hidden;
+                        // Insertion de la question
+                        if (question.AddQuestion())
+                        {                            
+                            Answers answer1 = new Answers
                             {
-                                firstAnswerJobsIdList.Add((int)cb.Tag);
-                            }
-
-                            List<int> secondAnswerJobsIdList = new List<int>();
-                            foreach (CheckBox cb in secondAnswerJobList)
+                                Title = firstOrientationAnswerTextBox.Text,
+                                Solution = true, // Pour les questions orientation, on considère que c'est toujours une bonne réponse
+                                QuestionId = question.Id
+                            };
+                            Answers answer2 = new Answers
                             {
-                                secondAnswerJobsIdList.Add((int)cb.Tag);
-                            }
-
-                            List<int> thirdAnswerJobsIdList = new List<int>();
-                            foreach (CheckBox cb in thirdAnswerJobList)
+                                Title = secondOrientationAnswerTextBox.Text,
+                                Solution = true, // Pour les questions orientation, on considère que c'est toujours une bonne réponse
+                                QuestionId = question.Id
+                            };
+                            Answers answer3 = new Answers
                             {
-                                thirdAnswerJobsIdList.Add((int)cb.Tag);
-                            }
+                                Title = thirdOrientationAnswerTextBox.Text,
+                                Solution = true, // Pour les questions orientation, on considère que c'est toujours une bonne réponse
+                                QuestionId = question.Id
+                            };
 
-                            if (answer1.AddLinkedJobs(firstAnswerJobsIdList) 
-                                && answer2.AddLinkedJobs(secondAnswerJobsIdList) 
-                                && answer3.AddLinkedJobs(thirdAnswerJobsIdList))
-                            {
-                                // Les correspondances ont bien été ajoutées
-                                MessageBox.Show("La question a bien été ajoutée.\n" +
-                                    "Les réponses ont bien été ajoutées.\n" +
-                                    "Les correspondances métiers ont bien été ajoutées.", "Succès");
-                                ReinitFields(); // TODO : surcharger pour vider les champs 'orientation' aussi
+                            // Insertion des réponses
+                            if (answer1.AddAnswer() && answer2.AddAnswer() && answer3.AddAnswer())
+                            {                                
+                                List<int> firstAnswerJobsIdList = GetCheckedJobsIdList(myFirstJobsPanel);
+                                List<int> secondAnswerJobsIdList = GetCheckedJobsIdList(mySecondJobsPanel);
+                                List<int> thirdAnswerJobsIdList = GetCheckedJobsIdList(myThirdJobsPanel);
+
+                                // Insertion des correspondances métiers
+                                if (answer1.AddLinkedJobs(firstAnswerJobsIdList)
+                                    && answer2.AddLinkedJobs(secondAnswerJobsIdList)
+                                    && answer3.AddLinkedJobs(thirdAnswerJobsIdList))
+                                {
+                                    // Les correspondances ont bien été ajoutées
+                                    MessageBox.Show("La question a bien été ajoutée.\n" +
+                                        "Les réponses ont bien été ajoutées.\n" +
+                                        "Les correspondances métiers ont bien été ajoutées.", "Succès"); // DEBUG
+                                    NavigationService.Navigate(new AddQuestionPage());
+                                }
+                                else
+                                {
+                                    // Les correspondances n'ont pas toutes été ajoutées
+                                    MessageBox.Show("Les réponses n'ont pas toutes été ajoutées.", "Erreur");
+                                }
                             }
                             else
                             {
-                                // Les correspondances n'ont pas toutes été ajoutées
+                                // Les réponses n'ont pas été toutes ajoutées
                                 MessageBox.Show("Les réponses n'ont pas toutes été ajoutées.", "Erreur");
                             }
                         }
                         else
                         {
-                            // Les réponses n'ont pas été toutes ajoutées
-                            MessageBox.Show("Les réponses n'ont pas toutes été ajoutées.", "Erreur");
+                            // La question n'a pas été ajoutée
+                            MessageBox.Show("La question n'a pas été ajoutée.", "Erreur");
                         }
                     }
                     else
                     {
-                        // La question n'a pas été ajoutée
-                        MessageBox.Show("La question n'a pas été ajoutée.", "Erreur");
+                        // Message erreur : lier au moins un métier à chaque réponse (ça n'a pas de sens sinon)
+                        errorMessageOrientation.Text = "Merci de lier au moins un métier à chaque réponse.";
+                        errorMessageOrientation.Visibility = Visibility.Visible;
                     }
                 }
                 else
