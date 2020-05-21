@@ -50,7 +50,7 @@ namespace ADO
         public static List<Questions> GetActiveQuestions()
         {
             List<Questions> questionsList = new List<Questions>();
-            string request = "SELECT id_question, entitled FROM T_Questions WHERE active = 'True'";
+            string request = "SELECT id_question, entitled, id_question_type FROM T_Questions WHERE active = 'True'";
             command = new SqlCommand(request, DataBase.connection);
             DataBase.connection.Open();
             reader = command.ExecuteReader();
@@ -59,7 +59,8 @@ namespace ADO
                 Questions question = new Questions
                 {
                     Id = reader.GetInt32(0),
-                    Title = reader.GetString(1)
+                    Title = reader.GetString(1),
+                    Type = reader.GetInt32(2)
                 };
                 questionsList.Add(question);
             }
