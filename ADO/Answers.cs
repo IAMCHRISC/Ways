@@ -10,6 +10,7 @@ namespace ADO
         private int id;
         private string title;
         private bool solution;
+        private bool active;
         private int questionId;
 
         private static SqlCommand command;
@@ -18,12 +19,13 @@ namespace ADO
         public int Id { get => id; set => id = value; }
         public string Title { get => title; set => title = value; }
         public bool Solution { get => solution; set => solution = value; }
+        public bool Active { get => active; set => active = value; }
         public int QuestionId { get => questionId; set => questionId = value; }
 
         public static List<Answers> GetAnswersByQuestionId(int questionId)
         {
             List<Answers> answersList = new List<Answers>();
-            string request = "SELECT id_answer, entitled, solution, id_question FROM T_Answers " +
+            string request = "SELECT id_answer, entitled, solution, active, id_question FROM T_Answers " +
                 "WHERE id_question = @questionId " +
                 "AND active = 'True'";
             command = new SqlCommand(request, DataBase.connection);
@@ -37,7 +39,8 @@ namespace ADO
                     Id = reader.GetInt32(0),
                     Title = reader.GetString(1),
                     Solution = reader.GetBoolean(2),
-                    QuestionId = reader.GetInt32(3)
+                    Active = reader.GetBoolean(3),
+                    QuestionId = reader.GetInt32(4)
                 };
                 answersList.Add(answer);
             }
@@ -86,6 +89,25 @@ namespace ADO
                 request += (i == 0) ? $"({jobsIdList[i]}, @id)" : $",({jobsIdList[i]}, @id)";
             }
             command = new SqlCommand(request, DataBase.connection);
+            command.Parameters.Add(new SqlParameter("@id", Id));
+            DataBase.connection.Open();
+            result = command.ExecuteNonQuery() > 0;
+            command.Dispose();
+            DataBase.connection.Close();
+            return result;
+        }
+
+        public bool EditAnswer()
+        {
+            bool result = false;
+            string request = "UPDATE T_Answers " +
+                "SET entitled = @title, solution = @solution, active = @active, id_question = @questionId " +
+                "WHERE id_answer = @id";
+            command = new SqlCommand(request, DataBase.connection);
+            command.Parameters.Add(new SqlParameter("@title", Title));
+            command.Parameters.Add(new SqlParameter("@solution", Solution));
+            command.Parameters.Add(new SqlParameter("@active", true)); // Une réponse modifiée reste active
+            command.Parameters.Add(new SqlParameter("@questionId", QuestionId));
             command.Parameters.Add(new SqlParameter("@id", Id));
             DataBase.connection.Open();
             result = command.ExecuteNonQuery() > 0;

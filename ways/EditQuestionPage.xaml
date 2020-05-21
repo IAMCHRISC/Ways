@@ -40,6 +40,54 @@
             <!--Formulaire jeu-->
             <StackPanel x:Name="gameStackPanel" Visibility="Collapsed">
                 <Label Content="Question 'Jeu'" HorizontalAlignment="Center"/>
+
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Intitulé : " Width="100"/>
+                    <TextBox Width="200" Text="" x:Name="gameQuestionTitleTextBox"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Ordre : " Width="100"/>
+                    <TextBox Width="200" Text="" x:Name="gameQuestionOrderTextBox"/>
+                </StackPanel>
+
+                <!--première réponse-->
+                <StackPanel x:Name="gameFirstAnswerStackPanel" Orientation="Horizontal">
+                    <Label Content="Réponse 1 : " Width="100"/>
+                    <TextBox Width="200" x:Name="gameFirstAnswerTextBox"/>
+                </StackPanel>
+
+                <!--deuxième réponse-->
+                <StackPanel x:Name="gameSecondAnswerStackPanel" Orientation="Horizontal">
+                    <Label Content="Réponse 2 : " Width="100"/>
+                    <TextBox Width="200" x:Name="gameSecondAnswerTextBox"/>
+                </StackPanel>
+
+                <!--troisième réponse-->
+                <StackPanel x:Name="gameThirdAnswerStackPanel" Orientation="Horizontal">
+                    <Label Content="Réponse 3 : " Width="100"/>
+                    <TextBox Width="200" x:Name="gameThirdAnswerTextBox"/>
+                </StackPanel>
+
+                <!--quatrième réponse-->
+                <StackPanel x:Name="gameFourthAnswerStackPanel" Orientation="Horizontal">
+                    <Label Content="Réponse 4 : " Width="100"/>
+                    <TextBox Width="200" x:Name="gameFourthAnswerTextBox"/>
+                </StackPanel>
+
+                <!--Bonne réponse -->
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Bonne réponse :" Width="100"/>
+                    <StackPanel x:Name="gameGoodAnswerStackPanel" Orientation="Vertical" Width="200">
+                        <RadioButton GroupName="goodAnswer" x:Name="rb1" Content="Réponse 1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <RadioButton GroupName="goodAnswer" x:Name="rb2" Content="Réponse 2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <RadioButton GroupName="goodAnswer" x:Name="rb3" Content="Réponse 3" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <RadioButton GroupName="goodAnswer" x:Name="rb4" Content="Réponse 4" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <TextBlock Foreground="Red" x:Name="gameErrorMessage"/>
+                <Button Content="Editer" Width="100" HorizontalAlignment="Right" Click="EditGameQuestion"/>
             </StackPanel>
 
             <!--Formulaire Marketing-->
