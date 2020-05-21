@@ -84,8 +84,19 @@ namespace ADO
 
         public bool AddQuestion()
         {
-            // TODO
-            return false;
+            string request = "INSERT INTO T_Questions (entitled, [order], active, id_question_type) " +
+                "OUTPUT INSERTED.ID_QUESTION " +
+                "VALUES (@title, @order, @active, @type)";
+            command = new SqlCommand(request, DataBase.connection);
+            command.Parameters.Add(new SqlParameter("@title", Title));
+            command.Parameters.Add(new SqlParameter("@order", 1)); // On ne gère pas encore l'ordre
+            command.Parameters.Add(new SqlParameter("@active", true)); // Une question ajoutée est active par défaut
+            command.Parameters.Add(new SqlParameter("@type", Type));
+            DataBase.connection.Open();
+            Id = (int)command.ExecuteScalar();
+            command.Dispose();
+            DataBase.connection.Close();
+            return Id > 0;
         }
     }
 }

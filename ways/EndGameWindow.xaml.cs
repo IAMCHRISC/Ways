@@ -30,7 +30,7 @@ namespace ways
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             // Redirection vers le formulaire marketing
-            MarketingWindow marketingWindow = new MarketingWindow();
+            MarketingWindow marketingWindow = new MarketingWindow(Player);
             marketingWindow.Show();
         }
 

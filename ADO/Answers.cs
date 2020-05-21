@@ -59,5 +59,39 @@ namespace ADO
             DataBase.connection.Close();
             return result;
         }
+
+        public bool AddAnswer()
+        {
+            string request = "INSERT INTO T_Answers (entitled, solution, active, id_question) " +
+                "OUTPUT INSERTED.ID_ANSWER " +
+                "VALUES (@title, @solution, @active, @questionId)";
+            command = new SqlCommand(request, DataBase.connection);
+            command.Parameters.Add(new SqlParameter("@title", Title));
+            command.Parameters.Add(new SqlParameter("@solution", Solution));
+            command.Parameters.Add(new SqlParameter("@active", true)); // Une réponse ajoutée est active par défaut
+            command.Parameters.Add(new SqlParameter("@questionId", QuestionId));
+            DataBase.connection.Open();
+            Id = (int)command.ExecuteScalar();
+            command.Dispose();
+            DataBase.connection.Close();
+            return Id > 0;
+        }
+
+        public bool AddLinkedJobs(List<int> jobsIdList)
+        {
+            bool result;
+            string request = "INSERT INTO T_Appartenir (id_job, id_answer) VALUES ";
+            for(int i = 0; i < jobsIdList.Count; i++)
+            {
+                request += (i == 0) ? $"({jobsIdList[i]}, @id)" : $",({jobsIdList[i]}, @id)";
+            }
+            command = new SqlCommand(request, DataBase.connection);
+            command.Parameters.Add(new SqlParameter("@id", Id));
+            DataBase.connection.Open();
+            result = command.ExecuteNonQuery() > 0;
+            command.Dispose();
+            DataBase.connection.Close();
+            return result;
+        }
     }
 }
