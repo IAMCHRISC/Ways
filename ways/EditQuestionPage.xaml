@@ -49,7 +49,9 @@
                     <Label Content="Intitulé : " Width="100"/>
                     <TextBox Width="200" Text="" x:Name="marketingQuestionTitleTextBox"/>
                 </StackPanel>
-                <Button Content="Editer" Width="100" HorizontalAlignment="Right"/>
+
+                <TextBlock Foreground="Red" x:Name="marketingErrorMessage"/>
+                <Button Content="Editer" Width="100" HorizontalAlignment="Right" Click="EditMarketingQuestion"/>
             </StackPanel>
         </StackPanel>
 

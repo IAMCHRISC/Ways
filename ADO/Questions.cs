@@ -10,6 +10,7 @@ namespace ADO
         private int id;
         private string title;
         private int order;
+        private bool active;
         private int type;
 
         private static SqlCommand command;
@@ -18,6 +19,7 @@ namespace ADO
         public int Id { get => id; set => id = value; }
         public string Title { get => title; set => title = value; }
         public int Order { get => order; set => order = value; }
+        public bool Active { get => active; set => active = value; }
         public int Type { get => type; set => type = value; }
 
         public static List<Questions> GetQuestionsByType(int type)
@@ -50,7 +52,7 @@ namespace ADO
         public static List<Questions> GetActiveQuestions()
         {
             List<Questions> questionsList = new List<Questions>();
-            string request = "SELECT id_question, entitled, id_question_type FROM T_Questions WHERE active = 'True'";
+            string request = "SELECT id_question, entitled, [order], active, id_question_type FROM T_Questions WHERE active = 'True'";
             command = new SqlCommand(request, DataBase.connection);
             DataBase.connection.Open();
             reader = command.ExecuteReader();
@@ -60,7 +62,9 @@ namespace ADO
                 {
                     Id = reader.GetInt32(0),
                     Title = reader.GetString(1),
-                    Type = reader.GetInt32(2)
+                    Order = reader.GetInt32(2),
+                    Active = reader.GetBoolean(3),
+                    Type = reader.GetInt32(4)
                 };
                 questionsList.Add(question);
             }
@@ -98,6 +102,25 @@ namespace ADO
             command.Dispose();
             DataBase.connection.Close();
             return Id > 0;
+        }
+
+        public bool EditQuestion()
+        {
+            bool result = false;
+            string request = "UPDATE T_Questions " +
+                "SET entitled = @title, [order] = @order, active = @active, id_question_type = @type " +
+                "WHERE id_question = @id";
+            command = new SqlCommand(request, DataBase.connection);
+            command.Parameters.Add(new SqlParameter("@title", Title));
+            command.Parameters.Add(new SqlParameter("@order", Order));
+            command.Parameters.Add(new SqlParameter("@active", Active));
+            command.Parameters.Add(new SqlParameter("@type", Type));
+            command.Parameters.Add(new SqlParameter("@id", Id));
+            DataBase.connection.Open();
+            result = command.ExecuteNonQuery() > 0;
+            command.Dispose();
+            DataBase.connection.Close();
+            return result;
         }
     }
 }
