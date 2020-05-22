@@ -12,11 +12,11 @@
     <Grid>
         <Label Content="EditQuestionPage" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="300">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
 
             <!--Sélection question-->
             <Label Content="Veuillez sélectionner une question à éditer : *" HorizontalAlignment="Center"/>
-            <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <ComboBox x:Name="questionsComboBox" Width="200">
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
@@ -35,6 +35,44 @@
             <!--Formulaire orientation-->
             <StackPanel x:Name="orientationStackPanel" Visibility="Collapsed">
                 <Label Content="Question 'Orientation'" HorizontalAlignment="Center"/>
+
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Intitulé : " Width="100"/>
+                    <TextBox Width="200" Text="" x:Name="orientationQuestionTitleTextBox" Margin="0,0,30,0" VerticalContentAlignment="Center"/>
+                    <Label Content="Ordre : " Width="50"/>
+                    <TextBox Width="50" Text="" x:Name="orientationQuestionOrderTextBox" Margin="0,0,30,0" TextAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label Content="Barème : " Width="60"/>
+                    <TextBox Width="50" Text="1" x:Name="orientationQuestionBaremeTextBox" IsEnabled="False" TextAlignment="Center" VerticalContentAlignment="Center"/>
+                </StackPanel>
+                
+                <StackPanel Orientation="Horizontal">
+                    <!--Première réponse-->
+                    <StackPanel Width="200" Orientation="Vertical" Margin="0,0,15,0">
+                        <Label Content="Réponse 1 : " Width="200"/>
+                        <TextBox Width="200" x:Name="firstOrientationAnswerTextBox" VerticalContentAlignment="Center"/>
+                        <Label Content="Métier(s) lié(s) : " Width="200"/>
+                        <StackPanel x:Name="myFirstJobsPanel"></StackPanel>
+                    </StackPanel>
+
+                    <!--Deuxième réponse-->
+                    <StackPanel Width="200" Orientation="Vertical" Margin="0,0,15,0">
+                        <Label Content="Réponse 2 : " Width="200"/>
+                        <TextBox Width="200" x:Name="secondOrientationAnswerTextBox" VerticalContentAlignment="Center"/>
+                        <Label Content="Métier(s) lié(s) : " Width="200"/>
+                        <StackPanel x:Name="mySecondJobsPanel"></StackPanel>
+                    </StackPanel>
+
+                    <!--Troisième réponse-->
+                    <StackPanel Width="200" Orientation="Vertical">
+                        <Label Content="Réponse 3 : " Width="200"/>
+                        <TextBox Width="200" x:Name="thirdOrientationAnswerTextBox" VerticalContentAlignment="Center"/>
+                        <Label Content="Métier(s) lié(s) : " Width="200"/>
+                        <StackPanel x:Name="myThirdJobsPanel"></StackPanel>
+                    </StackPanel>
+                </StackPanel>
+
+                <TextBlock Text="" Foreground="Red" Visibility="Hidden" x:Name="orientationErrorMessage"/>
+                <Button Content="Editer" HorizontalAlignment="Right" Width="100" Click="EditOrientationQuestion"/>
             </StackPanel>
 
             <!--Formulaire jeu-->

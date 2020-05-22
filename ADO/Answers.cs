@@ -12,6 +12,7 @@ namespace ADO
         private bool solution;
         private bool active;
         private int questionId;
+        private List<int> linkedJobs;
 
         private static SqlCommand command;
         private static SqlDataReader reader;
@@ -21,6 +22,7 @@ namespace ADO
         public bool Solution { get => solution; set => solution = value; }
         public bool Active { get => active; set => active = value; }
         public int QuestionId { get => questionId; set => questionId = value; }
+        public List<int> LinkedJobs { get => linkedJobs; set => linkedJobs = value; }
 
         public static List<Answers> GetAnswersByQuestionId(int questionId)
         {
@@ -88,6 +90,20 @@ namespace ADO
             {
                 request += (i == 0) ? $"({jobsIdList[i]}, @id)" : $",({jobsIdList[i]}, @id)";
             }
+            command = new SqlCommand(request, DataBase.connection);
+            command.Parameters.Add(new SqlParameter("@id", Id));
+            DataBase.connection.Open();
+            result = command.ExecuteNonQuery() > 0;
+            command.Dispose();
+            DataBase.connection.Close();
+            return result;
+        }
+
+        public bool DeleteLinkedJobs()
+        {
+            bool result;
+            string request = "DELETE FROM T_Appartenir " +
+                "WHERE id_answer = @id";
             command = new SqlCommand(request, DataBase.connection);
             command.Parameters.Add(new SqlParameter("@id", Id));
             DataBase.connection.Open();
