@@ -11,13 +11,44 @@
 
     <Grid>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Width="200">
-            <Label Content="" x:Name="adminNameLabel" HorizontalAlignment="Center"/>
-            <Button Content="Ajouter une question" MinWidth="100" Margin="10,5,10,5" Click="NavigateToAddQuestionPage"/>
-            <Button Content="Modifier une question" MinWidth="100" Margin="10,5,10,5" Click="NavigateToEditQuestionPage"/>
-            <Button Content="Supprimer une question" MinWidth="100" Margin="10,5,10,5" Click="NavigateToDeleteQuestionPage"/>
-            <Button Content="Compte de messagerie" MinWidth="100" Margin="10,5,10,5" Click="NavigateToEmailParamPage"/>
-            <Button Content="Classement des joueurs" MinWidth="100" Margin="10,5,10,5" Click="NavigateToEditGameLadderPage"/>
-            <Button Content="Déconnexion" MinWidth="100" Margin="10,5,10,5" Click="Logout"/>
+            <Image HorizontalAlignment="Center" Height="137" VerticalAlignment="Top" Width="200" Source="https://toulouse.cesi.fr/wp-content/uploads/sites/27/2018/11/Cesi_Logo_ALTERNANCE_RVB-360x187.png"/>
+            <Label Content="" x:Name="adminNameLabel" HorizontalAlignment="Center" FontSize="20" Margin="0,0,0,30"/>
+            <Button MinWidth="200" Height="30" Click="NavigateToAddQuestionPage" Background="White" BorderThickness="0" HorizontalContentAlignment="Left">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Resources/add_question.png" Margin="20,0,10,0" Height="20"/>
+                    <Label Content="Ajouter une question"/>
+                </StackPanel>
+            </Button>
+            <Button MinWidth="200" Height="30" Click="NavigateToEditQuestionPage" Background="White" BorderThickness="0" HorizontalContentAlignment="Left">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Resources/edit_question.png" Margin="20,0,10,0" Height="20"/>
+                    <Label Content="Modifier une question"/>
+                </StackPanel>
+            </Button>
+            <Button MinWidth="200" Height="30" Click="NavigateToDeleteQuestionPage" Background="White" BorderThickness="0" HorizontalContentAlignment="Left">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Resources/delete_question.png" Margin="20,0,10,0" Height="20"/>
+                    <Label Content="Supprimer une question"/>
+                </StackPanel>
+            </Button>
+            <Button MinWidth="200" Height="30" Click="NavigateToEmailParamPage" Background="White" BorderThickness="0" HorizontalContentAlignment="Left">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Resources/email.png" Margin="20,0,10,0" Height="20"/>
+                    <Label Content="Compte de messagerie"/>
+                </StackPanel>
+            </Button>
+            <Button MinWidth="200" Height="30" Click="NavigateToEditGameLadderPage" Background="White" BorderThickness="0" HorizontalContentAlignment="Left">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Resources/podium.png" Margin="20,0,10,0" Height="20"/>
+                    <Label Content="Classement des joueurs"/>
+                </StackPanel>
+            </Button>
+            <Button MinWidth="200" Height="30" Click="Logout" Background="White" BorderThickness="0" HorizontalContentAlignment="Left">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Resources/logout.png" Margin="20,0,10,0" Height="20"/>
+                    <Label Content="Déconnexion"/>
+                </StackPanel>
+            </Button>
         </StackPanel>
         <Frame x:Name="adminMainFrame" Margin="200,0,0,0" NavigationUIVisibility="Hidden"/>
     </Grid>

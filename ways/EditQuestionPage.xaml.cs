@@ -419,7 +419,7 @@ namespace ways
         private void EditOrientationQuestion(object sender, RoutedEventArgs e)
         {
             // On vérifie qu'il y a eu une modification
-            if (HasOrientationQuestionChanged()) // TODO
+            if (HasOrientationQuestionChanged())
             {
                 List<TextBox> answersList = new List<TextBox>();
                 answersList.Add(firstOrientationAnswerTextBox);
@@ -610,6 +610,8 @@ namespace ways
                         orientationErrorMessage.Visibility = Visibility.Visible;
                     }
                     #endregion
+
+                    NavigationService.Navigate(new EditQuestionPage());
                 }
                 else
                 {
