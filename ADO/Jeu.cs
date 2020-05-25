@@ -12,17 +12,24 @@ namespace ADO
         public static bool verif_cash(int id_question, string reponse)
         {
             int count;
-            string request = "SELECT COUNT(id_answer) FROM T_Answers WHERE id_question = @id_question AND entitled LIKE @reponse AND solution = 'true'";
-            command = new SqlCommand(request, DataBase.connection);
-            command.Parameters.Add(new SqlParameter("@id_question", id_question));
-            command.Parameters.Add(new SqlParameter("@reponse", '%' + reponse + '%'));
-            DataBase.connection.Open();
-            count = (int)command.ExecuteScalar();
-            DataBase.connection.Close();
-
-            if (count == 1)
+            if (reponse.Length > 0)
             {
-                return true;
+                string request = "SELECT COUNT(id_answer) FROM T_Answers WHERE id_question = @id_question AND UPPER(entitled) = UPPER(@reponse) AND solution = 'true'";
+                command = new SqlCommand(request, DataBase.connection);
+                command.Parameters.Add(new SqlParameter("@id_question", id_question));
+                command.Parameters.Add(new SqlParameter("@reponse", reponse));
+                DataBase.connection.Open();
+                count = (int)command.ExecuteScalar();
+                DataBase.connection.Close();
+
+                if (count == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             else
             {
@@ -73,7 +80,7 @@ namespace ADO
         public static int total_participation()
         {
             int retval;
-            string request = "SELECT MAX(id_score) FROM T_Score";
+            string request = "SELECT COUNT(id_score) FROM T_Score";
             command = new SqlCommand(request, DataBase.connection);
             DataBase.connection.Open();
             retval = (int)command.ExecuteScalar();

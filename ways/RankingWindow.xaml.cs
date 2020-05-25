@@ -54,8 +54,8 @@ namespace ways
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow window = new MainWindow();
-            window.Show();
+            //MainWindow window = new MainWindow();
+            //window.Show();
             this.Close();
         }
     }

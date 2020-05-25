@@ -5,10 +5,175 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ways"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="Administration - Editer une question">
+      d:DesignHeight="600" d:DesignWidth="1200"
+      Title="Administration - Editer une question"
+      Background="White">
 
     <Grid>
-        <Label Content="EditQuestionPage" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Width="950">
+            <!--Choix de la question-->
+            <StackPanel Orientation="Vertical" Width="400" Margin="0,100,0,50">
+                <!--Sélection question-->
+                <Label Content="Veuillez sélectionner une question à éditer : *" HorizontalAlignment="Center" Width="400"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="400">
+                    <ComboBox x:Name="questionsComboBox" Width="290">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Id}" Width="20"/>
+                                    <TextBlock Text=" - " Width="20"/>
+                                    <TextBlock Text="{Binding Title}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                    <Button Content="Continuer" Width="100" x:Name="deleteButton" Click="DisplayEditForm" Margin="10,0,0,0"/>
+                </StackPanel>
+                <TextBlock Text="Merci de sélectionner une question dans la liste." Foreground="Red" Visibility="Hidden" x:Name="errorTextBlock"/>
+
+            </StackPanel>
+            
+            <!--Formulaire orientation-->
+            <StackPanel x:Name="orientationStackPanel" Visibility="Collapsed" Width="950" HorizontalAlignment="Center">
+                
+                <!--Intitulé, ordre, bareme-->
+                <StackPanel Orientation="Horizontal" Width="950" Margin="0,0,0,20">
+                    <Label Content="Intitulé : *" Width="100"/>
+                    <TextBox Width="525" Text="" x:Name="orientationQuestionTitleTextBox" Margin="0,0,30,0" VerticalContentAlignment="Center"/>
+                    <Label Content="Ordre : " Width="50"/>
+                    <TextBox Width="50" Text="" x:Name="orientationQuestionOrderTextBox" Margin="0,0,30,0" TextAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label Content="Barème : " Width="60"/>
+                    <TextBox Width="50" Text="1" x:Name="orientationQuestionBaremeTextBox" IsEnabled="False" TextAlignment="Center" VerticalContentAlignment="Center"/>
+                </StackPanel>
+                
+                <!--Réponses-->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <!--Première réponse-->
+                    <StackPanel Width="300" Orientation="Vertical">
+                        <Label Content="Réponse 1 : *" Width="300"/>
+                        <TextBox Width="300" x:Name="firstOrientationAnswerTextBox" VerticalContentAlignment="Center"/>
+                        <Label Content="Métier(s) lié(s) : " Width="300"/>
+                        <StackPanel x:Name="myFirstJobsPanel" Width="300"></StackPanel>
+                    </StackPanel>
+
+                    <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" Margin="10,0,10,0"/>
+
+                    <!--Deuxième réponse-->
+                    <StackPanel Width="300" Orientation="Vertical">
+                        <Label Content="Réponse 2 : " Width="300"/>
+                        <TextBox Width="300" x:Name="secondOrientationAnswerTextBox" VerticalContentAlignment="Center"/>
+                        <Label Content="Métier(s) lié(s) : " Width="300"/>
+                        <StackPanel x:Name="mySecondJobsPanel" Width="300"></StackPanel>
+                    </StackPanel>
+
+                    <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" Margin="10,0,10,0"/>
+
+                    <!--Troisième réponse-->
+                    <StackPanel Width="300" Orientation="Vertical">
+                        <Label Content="Réponse 3 : " Width="300"/>
+                        <TextBox Width="300" x:Name="thirdOrientationAnswerTextBox" VerticalContentAlignment="Center"/>
+                        <Label Content="Métier(s) lié(s) : " Width="300"/>
+                        <StackPanel x:Name="myThirdJobsPanel" Width="300"></StackPanel>
+                    </StackPanel>
+                </StackPanel>
+
+                <TextBlock Text="error" Foreground="Red" Visibility="Hidden" x:Name="orientationErrorMessage" HorizontalAlignment="Center" Margin="0,20,0,20"/>
+
+                <Button HorizontalAlignment="Center" Width="230" Click="EditOrientationQuestion" Background="Green" FontWeight="Bold">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="Resources/ok.png" Height="15" Margin="10,0,10,0"/>
+                        <Label Content="Editer la question 'Orientation'" Foreground="White"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+
+            <!--Formulaire jeu-->
+            <StackPanel x:Name="gameStackPanel" Visibility="Collapsed" Width="700">
+                <!--Intitulé, ordre-->
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,20" Width="700">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Intitulé : *" Width="100"/>
+                        <TextBox Width="470" Text="" x:Name="gameQuestionTitleTextBox" VerticalContentAlignment="Center" Margin="0,0,29,0"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Ordre : " Width="50"/>
+                        <TextBox Width="50" Text="" x:Name="gameQuestionOrderTextBox" VerticalContentAlignment="Center"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <!--Réponses, bonne réponse-->
+                <StackPanel Orientation="Horizontal" Width="700">
+                    <!--Réponses-->
+                    <StackPanel Orientation="Vertical">
+                        <!--première réponse-->
+                        <StackPanel x:Name="gameFirstAnswerStackPanel" Orientation="Horizontal" Margin="0,0,0,10">
+                            <Label Content="Réponse 1 : " Width="100"/>
+                            <TextBox Width="370" x:Name="gameFirstAnswerTextBox"/>
+                        </StackPanel>
+
+                        <!--deuxième réponse-->
+                        <StackPanel x:Name="gameSecondAnswerStackPanel" Orientation="Horizontal" Margin="0,0,0,10">
+                            <Label Content="Réponse 2 : " Width="100"/>
+                            <TextBox Width="370" x:Name="gameSecondAnswerTextBox"/>
+                        </StackPanel>
+
+                        <!--troisième réponse-->
+                        <StackPanel x:Name="gameThirdAnswerStackPanel" Orientation="Horizontal" Margin="0,0,0,10">
+                            <Label Content="Réponse 3 : " Width="100"/>
+                            <TextBox Width="370" x:Name="gameThirdAnswerTextBox"/>
+                        </StackPanel>
+
+                        <!--quatrième réponse-->
+                        <StackPanel x:Name="gameFourthAnswerStackPanel" Orientation="Horizontal" Margin="0,0,0,10">
+                            <Label Content="Réponse 4 : " Width="100"/>
+                            <TextBox Width="370" x:Name="gameFourthAnswerTextBox"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" Margin="10,0,10,0"/>
+
+                    <!--Bonne réponse -->
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Bonne réponse :" Width="100"/>
+                        <StackPanel x:Name="gameGoodAnswerStackPanel" Orientation="Vertical" Width="100">
+                            <RadioButton GroupName="goodAnswer" x:Name="rb1" Content="Réponse 1" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,30,0,10"/>
+                            <RadioButton GroupName="goodAnswer" x:Name="rb2" Content="Réponse 2" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,0,10"/>
+                            <RadioButton GroupName="goodAnswer" x:Name="rb3" Content="Réponse 3" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,0,10"/>
+                            <RadioButton GroupName="goodAnswer" x:Name="rb4" Content="Réponse 4" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,0,10"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+
+                <TextBlock Text="error" Foreground="Red" Visibility="Hidden" x:Name="gameErrorMessage" HorizontalAlignment="Center" Margin="0,20,0,20"/>
+
+                <Button HorizontalAlignment="Center" Width="230" Click="EditGameQuestion" Background="Green" FontWeight="Bold">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="Resources/ok.png" Height="15" Margin="10,0,10,0"/>
+                        <Label Content="Editer la question 'Jeu'" Foreground="White"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+
+            <!--Formulaire Marketing-->
+            <StackPanel x:Name="marketingStackPanel" Visibility="Hidden" Orientation="Vertical" Width="400">
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Intitulé : *" Width="100"/>
+                    <TextBox Width="300" Text="" x:Name="marketingQuestionTitleTextBox" VerticalContentAlignment="Center"/>
+                </StackPanel>
+
+                <TextBlock Text="error" Foreground="Red" Visibility="Hidden" x:Name="marketingErrorMessage" HorizontalAlignment="Center" Margin="0,20,0,20"/>
+
+                <Button HorizontalAlignment="Center" Width="230" Click="EditMarketingQuestion" Background="Green" FontWeight="Bold">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="Resources/ok.png" Height="15" Margin="10,0,10,0"/>
+                        <Label Content="Editer la question 'Marketing'" Foreground="White"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+        
+        <TextBlock Text="Les champs marqués d'un * sont obligatoires." HorizontalAlignment="Center" FontSize="10" VerticalAlignment="Bottom" Margin="0,0,0,50"/>
     </Grid>
 </Page>
