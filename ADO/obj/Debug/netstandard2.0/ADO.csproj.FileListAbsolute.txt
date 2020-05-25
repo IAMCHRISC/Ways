@@ -1,9 +1,9 @@
 C:\Users\chris\source\repos\ways\ADO\bin\Debug\netstandard2.0\ADO.deps.json
 C:\Users\chris\source\repos\ways\ADO\bin\Debug\netstandard2.0\ADO.dll
-C:\Users\chris\source\repos\ways\ADO\obj\Debug\netstandard2.0\ADO.csprojAssemblyReference.cache
 C:\Users\chris\source\repos\ways\ADO\obj\Debug\netstandard2.0\ADO.AssemblyInfoInputs.cache
 C:\Users\chris\source\repos\ways\ADO\obj\Debug\netstandard2.0\ADO.AssemblyInfo.cs
 C:\Users\chris\source\repos\ways\ADO\bin\Debug\netstandard2.0\ADO.pdb
 C:\Users\chris\source\repos\ways\ADO\obj\Debug\netstandard2.0\ADO.csproj.CoreCompileInputs.cache
 C:\Users\chris\source\repos\ways\ADO\obj\Debug\netstandard2.0\ADO.dll
 C:\Users\chris\source\repos\ways\ADO\obj\Debug\netstandard2.0\ADO.pdb
+C:\Users\chris\source\repos\ways\ADO\obj\Debug\netstandard2.0\ADO.csprojAssemblyReference.cache

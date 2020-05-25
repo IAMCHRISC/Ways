@@ -9,7 +9,6 @@
       Title="Administration - Supprimer une question" Background="White">
 
     <Grid>
-        <Label Content="DeleteQuestionPage" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
             <Label Content="Veuillez sélectionner une question à supprimer : *" HorizontalAlignment="Center"/>
@@ -24,9 +23,17 @@
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
             </ComboBox>
-            <Button Content="Supprimer" Width="150" x:Name="deleteButton" Click="DeleteQuestion"/>
-            <TextBlock Text="Merci de sélectionner une question dans la liste." Foreground="Red" Visibility="Hidden" x:Name="errorTextBlock"/>
-            <TextBlock Text="* La suppression d'une question entraîne la suppression des réponses qui lui sont associées." TextWrapping="Wrap" FontSize="10"/>
+            
+            <TextBlock Text="Merci de sélectionner une question dans la liste." Foreground="Red" Visibility="Hidden" x:Name="errorTextBlock" HorizontalAlignment="Center" Margin="0,20,0,20"/>
+
+            <Button HorizontalAlignment="Center" Width="230" x:Name="deleteButton" Click="DeleteQuestion" Background="Red" FontWeight="Bold">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Resources/ok.png" Height="15" Margin="10,0,10,0"/>
+                    <Label Content="Supprimer la question" Foreground="White"/>
+                </StackPanel>
+            </Button>
         </StackPanel>
+
+        <TextBlock Text="* La suppression d'une question entraîne la suppression des réponses qui lui sont associées." HorizontalAlignment="Center" FontSize="10" VerticalAlignment="Bottom" Margin="0,0,0,50"/>
     </Grid>
 </Page>

@@ -5,52 +5,59 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ways"
         mc:Ignorable="d"
-        Title="RankingWindow" Height="600" Width="800">
+        Title="RankingWindow" Height="600" Width="800"
+        WindowStyle="None" WindowStartupLocation="CenterScreen"
+        WindowState="Maximized">
     <Grid>
-        <Image HorizontalAlignment="Left" Height="109" Margin="10,10,0,0" VerticalAlignment="Top" Width="250" Source="https://toulouse.cesi.fr/wp-content/uploads/sites/27/2018/11/Cesi_Logo_ALTERNANCE_RVB-360x187.png"/>
-        <Label Content="Classement du test" HorizontalAlignment="Left" Margin="387,43,0,0" VerticalAlignment="Top" FontSize="25"/>
-        <Label Content="Ton score :" HorizontalAlignment="Left" Margin="49,126,0,0" VerticalAlignment="Top" FontSize="15"/>
-        <Label x:Name="lbl_score" Content="" HorizontalAlignment="Left" Margin="129,126,0,0" VerticalAlignment="Top" FontSize="15" Foreground="Red"/>
-        <Label Content="Moyenne des scores :" HorizontalAlignment="Left" Margin="278,126,0,0" VerticalAlignment="Top" FontSize="15"/>
-        <Label x:Name="lbl_moyenne" Content="" HorizontalAlignment="Left" Margin="430,126,0,0" VerticalAlignment="Top" FontSize="15" Foreground="Red"/>
-        <Label Content="Nombre de participation :" HorizontalAlignment="Left" Margin="562,126,0,0" VerticalAlignment="Top" FontSize="15"/>
-        <Label x:Name="lbl_particiation" Content="" HorizontalAlignment="Left" Margin="742,126,0,0" VerticalAlignment="Top" FontSize="15" Foreground="Red"/>
-        <ListView x:Name="ListeRank" Margin="10,161,10,73" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16">
-            <ListView.View>
-                <GridView x:Name="GridRank">
-                    <GridViewColumn Header="Place" Width="173">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding rank}" TextAlignment="Center" Width="163"/>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Header="Username" Width="200">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding username}" TextAlignment="Center" Width="190"/>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Header="Score" Width="180">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding score}" TextAlignment="Center" Width="170"/>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Header="Date" Width="200">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding date}" TextAlignment="Center" Width="190"/>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                </GridView>
-            </ListView.View>
-        </ListView>
-        <Button Content="Retour a l'accueil" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="640,496,0,0" VerticalAlignment="Top" Width="130" Height="40"
+        <StackPanel Orientation="Horizontal" Height="130" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,0,0,0" Width="800">
+            <Image HorizontalAlignment="Left" Height="109" Margin="10,10,0,0" VerticalAlignment="Top" Width="250" Source="https://toulouse.cesi.fr/wp-content/uploads/sites/27/2018/11/Cesi_Logo_ALTERNANCE_RVB-360x187.png"/>
+            <Label Content="Classement du test" HorizontalAlignment="Left" Margin="120,43,0,0" VerticalAlignment="Top" FontSize="25"/>
+            <Button Content="Retour a l'accueil" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="50,50,0,0" VerticalAlignment="Top" Width="130" Height="40"
                 Background="White" Click="Button_Click"/>
-
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,110,0,0" Width="800">
+            <Label Content="Ton score :" HorizontalAlignment="Left" Margin="80,10,0,0" VerticalAlignment="Top" FontSize="15"/>
+            <Label x:Name="lbl_score" Content="" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="15" Foreground="Red"/>
+            <Label Content="Moyenne des scores :" HorizontalAlignment="Left" Margin="80,10,0,0" VerticalAlignment="Top" FontSize="15"/>
+            <Label x:Name="lbl_moyenne" Content="" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="15" Foreground="Red"/>
+            <Label Content="Nombre de participation :" HorizontalAlignment="Left" Margin="80,10,0,0" VerticalAlignment="Top" FontSize="15"/>
+            <Label x:Name="lbl_particiation" Content="" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="15" Foreground="Red"/>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Height="470" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,110,0,0" Width="800">
+            <ListView x:Name="ListeRank" Margin="10,50,10,73" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16">
+                <ListView.View>
+                    <GridView x:Name="GridRank">
+                        <GridViewColumn Header="Place" Width="173">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding rank}" TextAlignment="Center" Width="163"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Username" Width="200">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding username}" TextAlignment="Center" Width="190"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Score" Width="180">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding score}" TextAlignment="Center" Width="170"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Date" Width="200">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding date}" TextAlignment="Center" Width="190"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </StackPanel>
     </Grid>
 </Window>
