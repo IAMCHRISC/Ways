@@ -6,9 +6,61 @@
       xmlns:local="clr-namespace:ways"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Administration - Compte de messagerie">
+      Title="Administration - Compte de messagerie"
+      Background="White">
 
     <Grid>
-        <Label Content="EmailParamPage" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Width="500">
+            <Label Content="Compte de messagerie" FontWeight="Bold" FontSize="15" Margin="0,5,0,5"/>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                <Label Content="Adresse de messagerie : " Width="150"/>
+                <TextBox Width="350" x:Name="emailAddressBox"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <Label Content="Mot de passe : " Width="150"/>
+                <PasswordBox Width="350" x:Name="emailPasswordBox"/>
+            </StackPanel>
+
+            <Separator />
+
+            <Label Content="Test d'orientation" FontWeight="Bold" FontSize="15" Margin="0,5,0,5"/>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                <Label Content="Objet de l'email : " Width="150"/>
+                <TextBox Width="350" x:Name="orientationObjectBox"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <Label Content="Corps de l'email : " Width="150"/>
+                <TextBox Width="350" Height="80" TextWrapping="Wrap" x:Name="orientationMessageBox"/>
+            </StackPanel>
+
+            <Separator />
+
+            <Label Content="Test de connaissances" FontWeight="Bold" FontSize="15" Margin="0,5,0,5"/>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                <Label Content="Objet de l'email : " Width="150"/>
+                <TextBox Width="350" x:Name="gameObjectBox"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <Label Content="Corps de l'email : " Width="150"/>
+                <TextBox Width="350" Height="80" TextWrapping="Wrap" x:Name="gameMessageBox"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
+                <Button Background="Red" Margin="0,0,5,0" Click="CancelModification">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="Resources/delete_question.png" Height="15" Margin="10,0,10,0"/>
+                        <Label Content="Annuler"/>
+                    </StackPanel>
+                </Button>
+                <Button Background="Green" Click="ConfirmModification">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="Resources/ok.png" Height="15" Margin="10,0,10,0"/>
+                        <Label Content="Valider"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+
+            <TextBlock Text="" Foreground="Red" HorizontalAlignment="Center" x:Name="errorMessage" Margin="0,10,0,0"/>
+        </StackPanel>
     </Grid>
 </Page>

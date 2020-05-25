@@ -14,6 +14,7 @@
     <None Remove="Resources\email.png" />
     <None Remove="Resources\logout.png" />
     <None Remove="Resources\office.jpg" />
+    <None Remove="Resources\ok.png" />
     <None Remove="Resources\people.jpg" />
     <None Remove="Resources\podium.png" />
     <None Remove="Resources\results.jpg" />
@@ -32,6 +33,7 @@
     <Resource Include="Resources\email.png" />
     <Resource Include="Resources\logout.png" />
     <Resource Include="Resources\office.jpg" />
+    <Resource Include="Resources\ok.png" />
     <Resource Include="Resources\people.jpg" />
     <Resource Include="Resources\podium.png" />
     <Resource Include="Resources\results.jpg" />
