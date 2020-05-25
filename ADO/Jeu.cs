@@ -73,7 +73,7 @@ namespace ADO
         public static int total_participation()
         {
             int retval;
-            string request = "SELECT MAX(id_score) FROM T_Score";
+            string request = "SELECT COUNT(id_score) FROM T_Score";
             command = new SqlCommand(request, DataBase.connection);
             DataBase.connection.Open();
             retval = (int)command.ExecuteScalar();

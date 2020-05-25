@@ -5,15 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ways"
         mc:Ignorable="d"
-        Title="EndGameWindow" Height="600" Width="800">
+        Title="EndGameWindow" Height="600" Width="800"
+        WindowStyle="None" WindowStartupLocation="CenterScreen"
+        WindowState="Maximized">
     <Grid>
-        <Label Content="Score :" HorizontalAlignment="Left" Margin="344,157,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <Label x:Name="lbl_score" Content="" HorizontalAlignment="Left" Margin="413,157,0,0" VerticalAlignment="Top" FontSize="20" Width="30" Foreground="Red"/>
-        <Image HorizontalAlignment="Left" Height="109" Margin="10,10,0,0" VerticalAlignment="Top" Width="250" Source="https://toulouse.cesi.fr/wp-content/uploads/sites/27/2018/11/Cesi_Logo_ALTERNANCE_RVB-360x187.png"/>
-        <Label Content="Test de connaissance en informatique" HorizontalAlignment="Left" Margin="286,43,0,0" VerticalAlignment="Top" FontSize="25"/>
-        <Label Content="Souhaitez vous répondre a un questionnaire permettant d'en savoir plus sur vous ?" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,215,0,0" VerticalAlignment="Top" FontSize="20" Height="46" Width="780"/>
-        <Label Content="5 points supplémentaires" HorizontalAlignment="Center" Margin="0,255,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" FontSize="20" Foreground="Red" Width="780"/>
-        <Button x:Name="btn_yes" Content="Oui" HorizontalAlignment="Left" Margin="160,361,0,0" VerticalAlignment="Top" Height="50" Width="130" Background="White" FontSize="18" Click="Button_Click"/>
-        <Button x:Name="btn_no" Content="Non" HorizontalAlignment="Left" Margin="510,361,0,0" VerticalAlignment="Top" Height="50" Width="130" Background="White" FontSize="18" Click="Button_Click_1"/>
+        <StackPanel Orientation="Horizontal" Height="140" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,0,0,0" Width="800">
+            <Image HorizontalAlignment="Left" Height="109" Margin="10,10,0,0" VerticalAlignment="Top" Width="250" Source="https://toulouse.cesi.fr/wp-content/uploads/sites/27/2018/11/Cesi_Logo_ALTERNANCE_RVB-360x187.png"/>
+            <Label Content="Test de connaissance en informatique" HorizontalAlignment="Left" Margin="2,43,0,0" VerticalAlignment="Top" FontSize="25"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,140,0,0" Width="800">
+            <Label Content="Score :" HorizontalAlignment="Left" Margin="340,10,0,0" VerticalAlignment="Top" FontSize="20"/>
+            <Label x:Name="lbl_score" Content="" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="20" Width="30" Foreground="Red"/>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Height="100" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,240,0,0" Width="800">
+            <Label Content="Souhaitez vous répondre a un questionnaire permettant d'en savoir plus sur vous ?" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top" FontSize="20" Height="46" Width="780"/>
+            <Label Content="5 points supplémentaires" HorizontalAlignment="Center" Margin="0,0,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" FontSize="20" Foreground="Red" Width="780"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Height="100" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,380,0,0" Width="800">
+            <Button x:Name="btn_yes" Content="Oui" HorizontalAlignment="Left" Margin="160,0,0,0" VerticalAlignment="Top" Height="50" Width="130" Background="White" FontSize="18" Click="Button_Click"/>
+            <Button x:Name="btn_no" Content="Non" HorizontalAlignment="Left" Margin="230,0,0,0" VerticalAlignment="Top" Height="50" Width="130" Background="White" FontSize="18" Click="Button_Click_1"/>
+        </StackPanel>
     </Grid>
 </Window>

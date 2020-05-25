@@ -86,9 +86,8 @@ namespace ways
             {
                 Jeu.score = Jeu.score + 5;
                 Jeu.save_score(Player, Jeu.score);
-                // Redirection vers le classement plutôt
-                //RankingWindow window = new RankingWindow();
-                //window.Show();
+                RankingWindow window = new RankingWindow();
+                window.Show();
                 this.Close();
             }
         }
