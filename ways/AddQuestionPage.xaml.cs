@@ -54,7 +54,8 @@ namespace ways
         private void DisplayAnswersPanel(object sender, RoutedEventArgs e)
         {
             QuestionType selectedType = typesComboBox.SelectedItem as QuestionType;
-            if(selectedType != null)
+            JobsList = new List<Jobs>();
+            if (selectedType != null)
             {
                 QuestionType = selectedType.Id;
                 typeErrorMessage.Visibility = Visibility.Hidden;
