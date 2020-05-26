@@ -5,10 +5,79 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ways"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="Administration - Editer le classement des joueurs">
+      d:DesignHeight="600" d:DesignWidth="1200"
+      Title="Administration - Editer le classement des joueurs"
+      Background="White">
 
     <Grid>
-        <Label Content="EditGameLadderPage" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="800">
+            <Label Content="Tableau des scores" FontWeight="Bold" FontSize="20"/>
+
+            <!--List-->
+            <StackPanel>
+                <ListView x:Name="ladderListView" Margin="0,20,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="800" Height="200">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Place" Width="90">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Rank}" TextAlignment="Center" Width="90"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="Joueur" Width="400">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Username}" TextAlignment="Center" Width="400"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="Score" Width="100">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Score}" TextAlignment="Center" Width="100"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="Date" Width="199">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Date}" TextAlignment="Center" Width="199"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+
+                <TextBlock Text="error" Foreground="Red" Visibility="Hidden" x:Name="errorMessage" HorizontalAlignment="Center" Margin="0,20,0,20"/>
+
+                <Button HorizontalAlignment="Center" Width="100" Click="EditLine" Background="Orange" FontWeight="Bold">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="Resources/edit_question.png" Height="15" Margin="10,0,10,0"/>
+                        <Label Content="Modifier" Foreground="White"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+
+            <Separator Margin="0,20,0,20"/>
+
+            <!--Editing fields-->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="800">
+                <Label Content="Nom de joueur : " Width="100"/>
+                <TextBox VerticalContentAlignment="Center" x:Name="usernameBox" Width="300"/>
+                
+                <Label Content="Score : " Margin="100,0,0,0"/>
+                <TextBox VerticalContentAlignment="Center" x:Name="scoreBox" Width="50"/>
+
+                <Button HorizontalAlignment="Center" x:Name="confirmButton" Width="100" Click="ConfirmModif" Background="Green" FontWeight="Bold" IsEnabled="False" Margin="100,0,0,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="Resources/ok.png" Height="15" Margin="10,0,10,0"/>
+                        <Label Content="Valider" Foreground="White"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Page>
