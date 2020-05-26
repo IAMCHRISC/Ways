@@ -28,7 +28,7 @@
                             </DataTemplate>
                         </ComboBox.ItemTemplate>
                     </ComboBox>
-                    <Button Content="Continuer" Width="100" x:Name="deleteButton" Click="DisplayEditForm" Margin="10,0,0,0"/>
+                    <Button Content="Continuer" Width="100" x:Name="continueButton" Click="DisplayEditForm" Margin="10,0,0,0"/>
                 </StackPanel>
                 <TextBlock Text="Merci de sélectionner une question dans la liste." Foreground="Red" Visibility="Hidden" x:Name="errorTextBlock"/>
 

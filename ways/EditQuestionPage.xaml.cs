@@ -115,6 +115,11 @@ namespace ways
             secondOrientationAnswerTextBox.Text = AnswersToEdit[1].Title;
             thirdOrientationAnswerTextBox.Text = AnswersToEdit[2].Title;
 
+            // Réinitialiser les listes métiers
+            myFirstJobsPanel.Children.Clear();
+            mySecondJobsPanel.Children.Clear();
+            myThirdJobsPanel.Children.Clear();
+
             // Cocher les métiers liés
             JobsList = Jobs.GetJobs();
             foreach (Jobs job in JobsList)
