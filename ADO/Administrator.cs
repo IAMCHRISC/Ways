@@ -25,18 +25,6 @@ namespace ADO
         public static string GameObject { get => gameObject; set => gameObject = value; }
         public static string GameMessage { get => gameMessage; set => gameMessage = value; }
 
-        public Administrator()
-        {
-            EmailAddress = "test@viacesi.fr";
-            EmailPassword = "TestViacesi123";
-            OrientationObject = "Résultats du test d'orientation - Plateforme Ways - CESI Alternance";
-            OrientationMessage = ", tu trouveras ci-dessous tes résultats au test d'orientation que tu viens d'effectuer sur la plateforme Ways.";
-            GameObject = " t'invite aux JPO du CESI Alternance, pourras-tu faire mieux que lui au test de connaissances ?";
-            GameMessage = " vient de participer à notre test de connaissances en informatique lors de sa venue à nos journées portes ouvertes, " +
-                "pourras-tu faire mieux que lui ?\nViens découvrir l'école, les formations qui sont proposées et les débouchés lors de nos JPO, " +
-                "les 5 et 6 décembre prochains !";
-        }
-
         public static bool LoginVerification(string username, string password)
         {
             string request = "SELECT COUNT(id_login) FROM T_Login WHERE username = @username AND password = @password";
